@@ -1,0 +1,93 @@
+.projects.section {
+  padding: 3rem 1.5rem;
+  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  margin: 2rem auto;
+  max-width: 1100px;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #007bff;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.col-3 {
+  flex: 1 1 260px;
+  max-width: 260px;
+  margin: 0 1rem 2rem 1rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,123,255,0.13);
+}
+
+.card-body {
+  padding: 1.5rem 1.2rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #22223b;
+  margin-bottom: 0.7rem;
+}
+
+.card-body p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+}
+
+.card-body a {
+  display: inline-block;
+  color: #fff;
+  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.7rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+}
+
+.card-body a:hover {
+  background: #fff;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+@media (max-width: 900px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .col-3 {
+    max-width: 95vw;
+    margin: 0 0 2rem 0;
+  }
+}

@@ -1,0 +1,41 @@
+.typewriter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+  margin: 2rem 0;
+}
+
+.Typewriter {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007bff;
+  background: #fff;
+  padding: 1.2rem 2.5rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+  letter-spacing: 1px;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.Typewriter__cursor {
+  color: #00c6ff;
+  font-size: 2.2rem;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+@media (max-width: 600px) {
+  .Typewriter {
+    font-size: 1.2rem;
+    padding: 0.7rem 1rem;
+  }
+  .typewriter-container {
+    min-height: 70px;
+  }
+}
