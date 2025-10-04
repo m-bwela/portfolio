@@ -22,7 +22,7 @@ const projects = [
   {
     title: "Todo App",
     description: "A web Application to manage your tasks. Technologies used include; HTML5, CSS, JavaScript, React.",
-    link: "https://your-blog-link.com"
+    link: "https://todo-list-project-eight-eta.vercel.app/"
   }
 ];
 
