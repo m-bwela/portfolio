@@ -6,25 +6,29 @@ const reviews = [
     name: "Jane Doe",
     company: "Acme Corp",
     review: "Working with you was a fantastic experience! The project was delivered on time and exceeded our expectations.",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    rate: 5
   },
   {
     name: "John Smith",
     company: "Tech Solutions",
     review: "Professional, communicative, and highly skilled. I highly recommend for any web development needs.",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg"
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    rate: 4
   },
   {
     name: "Emily Chen",
     company: "Startup Inc.",
     review: "Great attention to detail and creative solutions. Will definitely collaborate again!",
-    avatar: "https://randomuser.me/api/portraits/women/68.jpg"
+    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    rate: 5
   },
   {
     name: "Michael Brown",
     company: "Innovatech",
     review: "A true professional! Delivered high-quality work and was a pleasure to collaborate with.",
-    avatar: "https://randomuser.me/api/portraits/men/45.jpg"
+    avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+    rate: 5
   }
 ];
 
@@ -50,6 +54,7 @@ export default function ClientReviews() {
             <p className="review-author">
               {reviews[current].name} <span className="review-company">({reviews[current].company})</span>
             </p>
+            <p className="review-rating">Rating: {"★".repeat(reviews[current].rate)}{"☆".repeat(5 - reviews[current].rate)}</p>
           </div>
         </div>
         <div className="reviews-dots">

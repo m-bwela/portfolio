@@ -52,6 +52,12 @@
   transform: scale(1.2);
 }
 
+.review-rating {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #ffb400;
+}
+
 @media (max-width: 900px) {
   .reviews-slideshow {
     min-height: 370px;
