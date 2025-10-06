@@ -1,10 +1,15 @@
-body {
+html, body {
   min-height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #8a008a;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-wood.png");
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center center;
+  background-attachment: fixed;
   font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
-  color: #22223b;
   font-size: 1.05rem;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -28,19 +33,30 @@ body {
   margin-bottom: 1rem;
 }
 
-.nav {
-  justify-content: center;
-  margin-bottom: 0;
+
+html, body {
+  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #8a008a;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-wood.png");
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s;
 }
 
-.nav-link {
-  color: #fff !important;
-  font-weight: 500;
-  font-size: 1.1rem;
-  transition: background 0.2s, color 0.2s;
-  padding: 0.5rem 1.2rem !important;
+#root, .app {
+  background: transparent;
+  min-height: 100vh;
 }
-
 .nav-link.active,
 .nav-link:hover {
   background: #fff !important;

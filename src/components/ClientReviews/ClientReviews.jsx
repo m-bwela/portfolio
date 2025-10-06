@@ -34,7 +34,7 @@ const reviews = [
 
 export default function ClientReviews() {
   const [current, setCurrent] = useState(0);
-
+  
   // Auto-advance every 5 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
