@@ -1,3 +1,29 @@
+/* Home link styling */
+.home-link {
+  display: inline-block;
+  margin: 1.5rem 0 1.2rem 1.2rem;
+  padding: 0.6rem 1.4rem;
+  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.08rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,123,255,0.10);
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  z-index: 10;
+}
+
+.home-link:hover {
+  background: #fff;
+  color: #007bff;
+  box-shadow: 0 4px 16px rgba(0,123,255,0.18);
+  border: 1.5px solid #007bff;
+  transform: translateY(-2px) scale(1.04);
+  text-decoration: underline;
+}
 .typewriter-container {
   display: flex;
   justify-content: center;
