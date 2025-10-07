@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: center;
   padding: 3rem 1.5rem;
-  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+  background: linear-gradient(120deg, #1B262C 0%, #1B1A55 100%);
   border-radius: 1.5rem;
   box-shadow: 0 4px 24px rgba(0,0,0,0.07);
   margin: 2rem auto;
@@ -98,7 +98,7 @@
 .about-content {
   flex: 2 1 400px;
   max-width: 600px;
-  background: #fff;
+  background: #205295;
   border-radius: 1.2rem;
   padding: 2rem 2.5rem;
   box-shadow: 0 2px 16px rgba(0,0,0,0.06);
@@ -114,7 +114,7 @@
 
 .about-description {
   font-size: 1.1rem;
-  color: #22223b;
+  color: #DCD6F7;
   line-height: 1.7;
   font-weight: 400;
 }

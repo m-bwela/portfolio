@@ -3,8 +3,8 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #8a008a;
-  background-image: url("https://www.transparenttextures.com/patterns/dark-wood.png");
+  background-color: #07001f !important;
+  background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png") !important;
   background-size: cover;
   background-repeat: repeat;
   background-position: center center;
@@ -19,7 +19,7 @@ html, body {
 
 
 .header {
-  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  background: linear-gradient(90deg, #070F2B 0%, #00c6ff 100%);
   color: #fff;
   padding: 2rem 0 1rem 0;
   text-align: center;
@@ -39,7 +39,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #8a008a;
+  background-color: #871400;
   background-image: url("https://www.transparenttextures.com/patterns/dark-wood.png");
   background-size: cover;
   background-repeat: repeat;
@@ -68,7 +68,7 @@ html, body {
   min-height: 80vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+  background: linear-gradient(120deg, #1d4d7e 0%, #1B262C 100%);
   padding: 3rem 0;
 }
 
