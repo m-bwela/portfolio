@@ -5,7 +5,7 @@ export default function Skills() {
     const location = useLocation();
     return (
         <>
-        {location.pathname !== '/' && <Link to="/">Home🏠</Link>}
+        {location.pathname !== '/' && <Link to="/" className="home-link">Home🏠</Link>}
             <section id="skills" className="container" style={{ marginTop: '20px'}}>
                 <h2 className="section-title text-center mb-4">My Skills</h2>
                 <div className="row">

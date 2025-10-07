@@ -5,7 +5,7 @@ export default function Contact() {
     const location = useLocation();
     return (
         <>
-        {location.pathname !== '/' && <Link to='/'>Home🏠</Link>}
+        {location.pathname !== '/' && <Link to='/' className='home-link'>Home🏠</Link>}
             <section className='contact section' id='contact'>
             <h2 className='section-title'>Contact Me 📞</h2>
             <section className='contact-description'> 

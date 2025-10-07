@@ -30,7 +30,7 @@ export default function Projects() {
     const location = useLocation();
   return (
     <>
-    {location.pathname !== '/' && <Link to="/">Home🏠</Link>}
+    {location.pathname !== '/' && <Link to="/" className='home-link'>Home🏠</Link>}
       <section className="projects section">
         <h2 className="section-title">Projects</h2>
         <div className="row">

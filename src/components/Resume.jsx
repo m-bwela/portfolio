@@ -5,7 +5,7 @@ export default function Resume() {
     const location = useLocation();
     return (
         <>
-        {location.pathname !== '/' && <Link to="/">Home🏠</Link>}
+        {location.pathname !== '/' && <Link to="/" className='home-link'>Home🏠</Link>}
          <section id='resume' className='resume section-bg'>
             <div className='row justify-content-center align-items-center text-center mb-5'>
                 <div className='col-lg-6'>
