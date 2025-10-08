@@ -25,6 +25,19 @@ html, body {
   text-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
+.header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+}
+.header li {
+  display: flex;
+  align-items: center;
+}
 
 .header h1 {
   font-size: 2.5rem;
@@ -59,7 +72,7 @@ html, body {
 }
 .nav-link.active,
 .nav-link:hover {
-  background: #fff !important;
+  background: #0A2647 !important;
   color: #007bff !important;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }

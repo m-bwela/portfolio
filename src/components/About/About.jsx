@@ -6,7 +6,11 @@ export default function About() {
     const location = useLocation();
     return (
         <>
-        {location.pathname !== '/' && <Link to="/" className='home-link'>Home🏠</Link>}
+        {location.pathname !== '/' && (
+            <div className='home-link-wrap'>
+                <Link to="/" className='home-link'>Home🏠</Link>
+            </div>
+        )}
         <section className='about section' id='about'>
             <div className='about-image'>
                 <div className='about-image-overlay'>

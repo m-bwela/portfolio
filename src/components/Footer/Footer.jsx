@@ -8,7 +8,7 @@ export default function Footer() {
             <p>&copy; 2025 - {year} All Rights Reserved</p>
             <a href='/'>Privacy Policy</a>
             <a href='/'>Terms of Service</a>
-            <a href='/contact'>Contact Us</a>
+            <a href='/contact'>Contact Me</a>
 
             <div className='socials'>
                 <div className="socials">
