@@ -3,6 +3,23 @@ import { Link, useLocation } from 'react-router-dom';
 
 export default function Contact() {
     const location = useLocation();
+
+    function handleSubmit(e) {
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+        console.log(data);
+    }
+
+    function handleFocus(e) {
+        e.target.style.background = '#2B2E4A';
+        e.target.style.color = '#fff';
+    }
+
+    function handleBlur(e) {
+        e.target.style.background = '';
+        e.target.style.color = '';
+    }
+
     return (
         <>
         {location.pathname !== '/' && <Link to='/' className='home-link'>Home🏠</Link>}
@@ -27,10 +44,10 @@ export default function Contact() {
             </ul>
             <div className='contact-container'>
                 <form action="https://formspree.io/f/mayvldwp" method="POST" className='contact-form'>
-                    <input type="text" name="name" placeholder="Your Name" required />
-                    <input type="email" name="email" placeholder="Your Email" required />
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send</button>
+                    <input type="text" name="name" placeholder="Your Name" onFocus={handleFocus} onBlur={handleBlur} required />
+                    <input type="email" name="email" placeholder="Your Email" onFocus={handleFocus} onBlur={handleBlur} required />
+                    <textarea name="message" placeholder="Your Message" onFocus={handleFocus} onBlur={handleBlur} required></textarea>
+                    <button type="submit" onClick={handleSubmit}>Send</button>
                 </form>
             </div>
             </section>

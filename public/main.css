@@ -154,7 +154,7 @@ html, body {
 }
 
 #skills.container {
-  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+  background: linear-gradient(120deg, #205295 0%, #2C74B3 100%);
   border-radius: 1.5rem;
   box-shadow: 0 4px 24px rgba(0,0,0,0.07);
   padding: 3rem 1.5rem 2.5rem 1.5rem;
@@ -180,7 +180,7 @@ html, body {
 .col-md-4 {
   flex: 1 1 260px;
   max-width: 320px;
-  background: #fff;
+  background: #393E46;
   border-radius: 1.2rem;
   box-shadow: 0 2px 16px rgba(0,0,0,0.09);
   padding: 2rem 1.5rem;
@@ -208,7 +208,7 @@ html, body {
 
 .col-md-4 ul li {
   font-size: 1.05rem;
-  color: #22223b;
+  color: #f8fafc;
   padding: 0.4rem 0;
   border-bottom: 1px solid #e0e7ff;
   transition: color 0.2s;
@@ -235,7 +235,7 @@ html, body {
 }
 
 .resume.section-bg {
-  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+  background: linear-gradient(120deg, #9290C3 0%, #535C91 100%);
   border-radius: 1.5rem;
   box-shadow: 0 4px 24px rgba(0,0,0,0.07);
   padding: 3rem 1.5rem 2.5rem 1.5rem;
@@ -245,7 +245,7 @@ html, body {
 
 .resume-title {
   font-size: 2rem;
-  color: #007bff;
+  color: #212121;
   font-weight: 700;
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
@@ -289,7 +289,7 @@ html, body {
 }
 
 .contact.section {
-  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+  background: linear-gradient(120deg, #0D7377 0%, #e0e7ff 100%);
   border-radius: 1.5rem;
   box-shadow: 0 4px 24px rgba(0,0,0,0.07);
   padding: 3rem 1.5rem 2.5rem 1.5rem;
@@ -329,13 +329,13 @@ html, body {
 }
 
 .contact-icon {
-  color: #007bff;
+  color: #2B2E4A;
   font-weight: 600;
   margin-right: 0.5rem;
 }
 
 .contact-list a {
-  color: #00c6ff;
+  color: #2B2E4A;
   text-decoration: none;
   transition: color 0.2s;
   word-break: break-all;
@@ -352,7 +352,7 @@ html, body {
 }
 
 .contact-form {
-  background: #fff;
+  background: #323232;
   border-radius: 1.2rem;
   box-shadow: 0 2px 16px rgba(0,0,0,0.09);
   padding: 2rem 2.5rem;

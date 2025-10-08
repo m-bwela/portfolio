@@ -29,12 +29,25 @@ const reviews = [
     review: "A true professional! Delivered high-quality work and was a pleasure to collaborate with.",
     avatar: "https://randomuser.me/api/portraits/men/45.jpg",
     rate: 5
+  }, 
+  {
+    name: "Sarah Connor",
+    company: "Cyberdyne Systems",
+    review: "An exceptional partner! Their expertise in AI development is unmatched.",
+    avatar: "https://randomuser.me/api/portraits/women/50.jpg",
+    rate: 4
+  },
+  {
+    name: "David Lee",
+    company: "NextGen Tech",
+    review: "Delivered a robust and scalable solution that perfectly met our business needs.",
+    avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+    rate: 5
   }
 ];
 
 export default function ClientReviews() {
   const [current, setCurrent] = useState(0);
-  
   // Auto-advance every 5 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -44,29 +57,31 @@ export default function ClientReviews() {
   }, [current]);
 
   return (
-    <section className="reviews-section">
-      <h2 className="reviews-title">Client Reviews</h2>
-      <div className="reviews-slideshow">
-        <div className="review-card active">
-          <img src={reviews[current].avatar} alt={reviews[current].name} className="review-avatar" />
-          <div className="review-content">
-            <p className="review-text">"{reviews[current].review}"</p>
-            <p className="review-author">
-              {reviews[current].name} <span className="review-company">({reviews[current].company})</span>
-            </p>
-            <p className="review-rating">Rating: {"★".repeat(reviews[current].rate)}{"☆".repeat(5 - reviews[current].rate)}</p>
+    <div className="client-reviews-container">
+      <section className="reviews-section">
+        <h2 className="reviews-title">Client Reviews</h2>
+        <div className="reviews-slideshow">
+          <div className="review-card active">
+            <img src={reviews[current].avatar} alt={reviews[current].name} className="review-avatar" />
+            <div className="review-content">
+              <p className="review-text">"{reviews[current].review}"</p>
+              <p className="review-author">
+                {reviews[current].name} <span className="review-company">({reviews[current].company})</span>
+              </p>
+              <p className="review-rating">Rating: {"★".repeat(reviews[current].rate)}{"☆".repeat(5 - reviews[current].rate)}</p>
+            </div>
+          </div>
+          <div className="reviews-dots">
+            {reviews.map((_, idx) => (
+              <span
+                key={idx}
+                className={`dot${idx === current ? " active" : ""}`}
+                onClick={() => setCurrent(idx)}
+              />
+            ))}
           </div>
         </div>
-        <div className="reviews-dots">
-          {reviews.map((_, idx) => (
-            <span
-              key={idx}
-              className={`dot${idx === current ? " active" : ""}`}
-              onClick={() => setCurrent(idx)}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

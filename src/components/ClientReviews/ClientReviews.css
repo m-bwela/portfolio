@@ -1,3 +1,21 @@
+/* Container for the whole reviews section */
+.client-reviews-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2.5rem 0;
+  background: linear-gradient(120deg, #2B2E4A 0%, #e0e7ff 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  width: 75%;
+  margin: 2rem auto;
+}
+
+@media (max-width: 900px) {
+  .client-reviews-container {
+    padding: 1.2rem 0.2rem;
+  }
+}
 /* Home link styling */
 .home-link {
   display: inline-block;
@@ -28,7 +46,7 @@
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: #191A19;
 }
 
 .reviews-slideshow {
