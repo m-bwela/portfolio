@@ -22,7 +22,11 @@ export default function Contact() {
 
     return (
         <>
-        {location.pathname !== '/' && <Link to='/' className='home-link'>Home🏠</Link>}
+        {location.pathname !== '/' && (
+            <div className='home-link-wrap'>
+                <Link to='/' className='home-link'>Home🏠</Link>
+            </div>
+        )}
             <section className='contact section' id='contact'>
             <h2 className='section-title'>Contact Me 📞</h2>
             <section className='contact-description'> 

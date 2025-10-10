@@ -1,17 +1,26 @@
-/* Home link styling */
+/* Home link wrapper to center the link */
+.home-link-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
 .home-link {
-  display: inline-block;
-  margin: 1.5rem 0 1.2rem 1.2rem;
-  padding: 0.6rem 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
   background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
   color: #fff;
   font-weight: 600;
-  font-size: 1.08rem;
-  border-radius: 2rem;
+  font-size: 1.02rem;
+  border-radius: 999px;
   text-decoration: none;
   box-shadow: 0 2px 8px rgba(0,123,255,0.10);
-  letter-spacing: 0.5px;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  letter-spacing: 0.4px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.18s;
   position: relative;
   z-index: 10;
 }
@@ -21,8 +30,8 @@
   color: #007bff;
   box-shadow: 0 4px 16px rgba(0,123,255,0.18);
   border: 1.5px solid #007bff;
-  transform: translateY(-2px) scale(1.04);
-  text-decoration: underline;
+  transform: translateY(-2px) scale(1.03);
+  text-decoration: none;
 }
 .projects.section {
   padding: 3rem 1.5rem;
