@@ -1,13 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Contact() {
     const location = useLocation();
 
-    function handleSubmit(e) {
-        const formData = new FormData(e.target);
-        const data = Object.fromEntries(formData);
-        console.log(data);
+    const [status, setStatus] = useState('idle'); // idle | loading | success | error
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        setStatus('loading');
+        const form = e.target;
+        const formData = new FormData(form);
+
+        try {
+            const res = await fetch('https://formspree.io/f/mayvldwp', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json'
+                },
+                body: formData
+            });
+
+            if (res.ok) {
+                setStatus('success');
+                form.reset();
+            } else {
+                // try to parse JSON error message
+                try {
+                    const json = await res.json();
+                    console.error('Formspree error response:', json);
+                } catch (err) {
+                    console.error('Formspree non-json error', err);
+                }
+                setStatus('error');
+            }
+        } catch (err) {
+            console.error('Form submit failed', err);
+            setStatus('error');
+        }
     }
 
     function handleFocus(e) {
@@ -47,11 +77,13 @@ export default function Contact() {
                 </li>
             </ul>
             <div className='contact-container'>
-                <form action="https://formspree.io/f/mayvldwp" method="POST" className='contact-form'>
+                <form onSubmit={handleSubmit} className='contact-form'>
                     <input type="text" name="name" placeholder="Your Name" onFocus={handleFocus} onBlur={handleBlur} required />
                     <input type="email" name="email" placeholder="Your Email" onFocus={handleFocus} onBlur={handleBlur} required />
                     <textarea name="message" placeholder="Your Message" onFocus={handleFocus} onBlur={handleBlur} required></textarea>
-                    <button type="submit" onClick={handleSubmit}>Send</button>
+                    <button type="submit" disabled={status === 'loading'}>{status === 'loading' ? 'Sending...' : 'Send'}</button>
+                    {status === 'success' && <p className='form-success' style={{ color: '#1b7a3e', marginTop: '0.75rem' }}>Thanks — your message has been sent.</p>}
+                    {status === 'error' && <p className='form-error' style={{ color: '#b00020', marginTop: '0.75rem' }}>Something went wrong — please try again later.</p>}
                 </form>
             </div>
             </section>
