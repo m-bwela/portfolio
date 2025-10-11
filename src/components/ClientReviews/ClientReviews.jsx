@@ -43,6 +43,13 @@ const reviews = [
     review: "Delivered a robust and scalable solution that perfectly met our business needs.",
     avatar: "https://randomuser.me/api/portraits/men/46.jpg",
     rate: 5
+  },
+  {
+    name: "Anna Kim",
+    company: "Creative Minds",
+    review: "Their creativity and technical skills brought our vision to life in ways we never imagined.",
+    avatar: "https://randomuser.me/api/portraits/women/55.jpg",
+    rate: 4
   }
 ];
 
