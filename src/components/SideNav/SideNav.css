@@ -99,41 +99,43 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .side-nav {
-    top: auto;
-    bottom: 20px;
-    left: 50%;
-    transform: translateY(0) translateX(-50%) scale(0.9);
-    border-radius: 25px;
+    top: 50%;
+    right: 0;
+    left: auto;
+    transform: translateY(-50%) translateX(100%);
+    border-radius: 12px 0 0 12px;
     border-right: none;
-    padding: 8px 15px;
-    border-bottom: 2px solid var(--sidenav-accent);
-    flex-direction: row;
+    border-left: 3px solid var(--sidenav-accent);
+    padding: 12px 4px;
     width: auto;
+    opacity: 0.9;
+    background: var(--sidenav-bg);
   }
   
   .side-nav:hover, 
   .side-nav:focus-within,
   .side-nav.visible {
-    transform: translateY(0) translateX(-50%) scale(1);
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
   }
   
   .side-nav-content {
-    flex-direction: row;
-    gap: 5px;
-    padding: 0;
+    flex-direction: column;
+    gap: 8px;
+    padding: 4px;
   }
   
   .side-nav-item {
-    padding: 8px;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    justify-content: center;
+    padding: 10px;
+    border-radius: 8px;
+    width: auto;
+    height: auto;
+    justify-content: flex-start;
   }
   
   .side-nav-icon {
     margin-right: 0;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   
   .side-nav-label {
@@ -141,20 +143,22 @@
   }
   
   .side-nav-item.active {
+    background: rgba(255, 255, 255, 0.2);
     border-left: none;
-    border-bottom: 2px solid var(--sidenav-accent);
+    border-right: 3px solid var(--sidenav-accent);
   }
   
   .side-nav-item.active::before {
-    width: 100%;
-    height: 3px;
-    top: auto;
-    bottom: 0;
+    left: auto;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    top: 0;
   }
 }
 
 /* Animation for entry */
-@keyframes sidenav-entry {
+@keyframes sidenav-entry-left {
   from {
     transform: translateY(-50%) translateX(-100%);
     opacity: 0;
@@ -165,6 +169,23 @@
   }
 }
 
+@keyframes sidenav-entry-right {
+  from {
+    transform: translateY(-50%) translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+  }
+}
+
 .side-nav.visible {
-  animation: sidenav-entry 0.5s forwards;
+  animation: sidenav-entry-left 0.5s forwards;
+}
+
+@media (max-width: 768px) {
+  .side-nav.visible {
+    animation: sidenav-entry-right 0.5s forwards;
+  }
 }

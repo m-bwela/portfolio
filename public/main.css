@@ -440,27 +440,6 @@ html, body {
   margin: 1.5rem 0 0.5rem 0;
 }
 
-.resume-download .btn {
-  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
-  color: #fff;
-  font-weight: 600;
-  padding: 0.7rem 2rem;
-  border-radius: 0.7rem;
-  font-size: 1.1rem;
-  border: none;
-  box-shadow: 0 2px 8px rgba(0,123,255,0.08);
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.resume-download .btn:hover {
-  background: #fff;
-  color: #007bff;
-  border: 1px solid #007bff;
-  box-shadow: 0 8px 32px rgba(0,123,255,0.13);
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .header h1 {
@@ -588,17 +567,23 @@ html, body {
 }
 
 .resume.section-bg {
-  background: linear-gradient(120deg, var(--primary-dark) 0%, var(--secondary) 100%);
+  background: linear-gradient(120deg, #1a1a2e 0%, #16213e 100%);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(76,201,240,0.2);
   padding: var(--space-xl);
   margin: var(--space-xl) auto;
   max-width: 800px;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(76,201,240,0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  animation: subtlePulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes subtlePulseGlow {
+  0%, 100% { box-shadow: var(--shadow-lg), 0 0 20px rgba(76,201,240,0.2); }
+  50% { box-shadow: var(--shadow-lg), 0 0 30px rgba(76,201,240,0.4); }
 }
 
 .resume.section-bg::before {
@@ -610,11 +595,12 @@ html, body {
   height: 200%;
   background: radial-gradient(
     circle,
-    rgba(255,255,255,0.1) 0%,
+    rgba(76,201,240,0.15) 0%,
+    rgba(67,97,238,0.05) 30%,
     transparent 70%
   );
-  opacity: 0.5;
-  animation: shine 15s linear infinite;
+  opacity: 0.6;
+  animation: shine 20s linear infinite;
 }
 
 @keyframes shine {
@@ -628,46 +614,61 @@ html, body {
 
 .resume-title {
   font-size: 2rem;
-  color: #212121;
+  color: #ffffff;
   font-weight: 700;
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .resume-content p {
   font-size: 1.1rem;
-  color: #22223b;
+  color: #f0f0f0;
   margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
 .resume-download .btn {
-  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  background: linear-gradient(90deg, #4cc9f0 0%, #4361ee 100%);
   color: #fff;
   font-weight: 600;
   padding: 0.7rem 2rem;
   border-radius: 0.7rem;
   font-size: 1.1rem;
   border: none;
-  box-shadow: 0 2px 8px rgba(0,123,255,0.08);
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(76,201,240,0.3);
+  transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .resume-download .btn:hover {
-  background: #fff;
-  color: #007bff;
-  border: 1px solid #007bff;
-  box-shadow: 0 8px 32px rgba(0,123,255,0.13);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(76,201,240,0.4);
+  color: #fff;
+  background: linear-gradient(90deg, #4361ee 0%, #3a0ca3 100%);
 }
 
 @media (max-width: 700px) {
   .resume.section-bg {
-    padding: 2rem 0.5rem;
-    max-width: 98vw;
+    padding: 2rem 1.2rem;
+    max-width: 95vw;
+    margin: var(--space-lg) auto;
   }
   .resume-title {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+  }
+  .resume-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+  .resume-download .btn {
+    padding: 0.6rem 1.8rem;
+    font-size: 1rem;
   }
 }
 
