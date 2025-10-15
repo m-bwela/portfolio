@@ -65,7 +65,7 @@ const SideNav = () => {
   return (
     <div className={`side-nav ${isVisible ? 'visible' : ''}`}>
       <div className="side-nav-content">
-        <a 
+        {/* <a 
           href="#home" 
           className={`side-nav-item ${activeSection === 'home' ? 'active' : ''}`}
           aria-label="Home"
@@ -73,7 +73,7 @@ const SideNav = () => {
         >
           <span className="side-nav-icon">🏠</span>
           <span className="side-nav-label">Home</span>
-        </a>
+        </a> */}
         <a 
           href="#about" 
           className={`side-nav-item ${activeSection === 'about' ? 'active' : ''}`}
@@ -101,15 +101,14 @@ const SideNav = () => {
           <span className="side-nav-icon">🛠️</span>
           <span className="side-nav-label">Skills</span>
         </a>
-        <a 
-          href="#resume" 
+        <Link 
+          to="/resume" 
           className={`side-nav-item ${activeSection === 'resume' ? 'active' : ''}`}
           aria-label="Resume"
-          onClick={(e) => handleNavClick(e, 'resume')}
         >
           <span className="side-nav-icon">📄</span>
           <span className="side-nav-label">Resume</span>
-        </a>
+        </Link>
         <a 
           href="#contact" 
           className={`side-nav-item ${activeSection === 'contact' ? 'active' : ''}`}
