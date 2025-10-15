@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 export default function Footer() {
@@ -6,9 +7,9 @@ export default function Footer() {
     return (
         <footer className='footer'>
             <p>&copy; 2025 - {year} All Rights Reserved</p>
-            <a href='/'>Privacy Policy</a>
-            <a href='/'>Terms of Service</a>
-            <a href='/contact'>Contact Me</a>
+            <Link to='/privacy'>Privacy Policy</Link>
+            <Link to='/terms'>Terms of Service</Link>
+            <Link to='/contact'>Contact Me</Link>
 
             <div className='socials'>
                 <div className="socials">
@@ -22,8 +23,6 @@ export default function Footer() {
                         <i className="fab fa-github"></i>
                     </a>
                 </div>
-
-
             </div>
         </footer>
     )
