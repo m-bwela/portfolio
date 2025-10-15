@@ -55,7 +55,7 @@ export default function Resume() {
                                     <span>HTML/CSS</span>
                                     <span>Git</span>
                                     <span>RESTful APIs</span>
-                                    <span>MongoDB</span>
+                                    <span>PostgreSQL</span>
                                     <span>SQL</span>
                                 </div>
                             </div>
