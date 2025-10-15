@@ -86,17 +86,19 @@
   align-items: center;
   justify-content: center;
   font-size: 1.8rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   cursor: pointer;
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.3s var(--transition-bounce);
   outline: none;
+  pointer-events: none;
 }
 
 .scroll-to-top-btn.visible {
-  opacity: 1;
+  opacity: 0.9;
   transform: translateY(0);
+  pointer-events: auto;
 }
 
 .scroll-to-top-btn:hover {
@@ -105,10 +107,16 @@
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
   border: 1.5px solid var(--primary);
+  opacity: 1;
 }
 
 .scroll-to-top-btn:active {
   transform: translateY(-2px);
+}
+
+/* Enhanced visibility */
+.scroll-to-top-btn {
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3), 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
 .scroll-to-top-btn:focus-visible {

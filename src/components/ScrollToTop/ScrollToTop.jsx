@@ -9,6 +9,8 @@ export default function ScrollToTop() {
       setVisible(window.scrollY > 200);
     };
     window.addEventListener('scroll', handleScroll);
+    // Trigger initial check
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -16,11 +18,15 @@ export default function ScrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Always render the button, but with different classes based on visibility
   return (
-    visible && (
-      <button className="scroll-to-top-btn" onClick={handleClick}>
-        ↑
-      </button>
-    )
+    <button 
+      className={`scroll-to-top-btn ${visible ? 'visible pulse' : ''}`} 
+      onClick={handleClick}
+      style={{ display: visible ? 'flex' : 'none' }}
+      aria-label="Scroll to top"
+    >
+      <span aria-hidden="true">↑</span>
+    </button>
   );
 }
