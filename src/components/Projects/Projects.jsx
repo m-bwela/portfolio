@@ -35,7 +35,7 @@ export default function Projects() {
         <Link to="/" className='home-link'>Home🏠</Link>
       </div>
     )}
-      <section className="projects section">
+      <section className="projects section" id="projects">
         <h2 className="section-title">Projects</h2>
         <div className="row">
           {projects.map((project, idx) => (

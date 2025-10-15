@@ -38,8 +38,7 @@ html, body {
   animation: 
     fadeInDown 0.8s ease-out,
     gradientMove 15s ease infinite;
-  position: sticky;
-  top: 0;
+  position: relative; /* Changed from sticky to relative */
   z-index: 1000;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -50,13 +49,8 @@ html, body {
   100% { background-position: 0% 50%; }
 }
 
-/* Scrolled state - compact header */
-.header.scrolled {
-  padding: 0.8rem 1rem;
-  background: rgba(8,31,69,0.95);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
+/* Header styles - Static position */
+/* We've removed the scrolled state since the header is now static */
 
 @keyframes fadeInDown {
   0% {
@@ -175,11 +169,6 @@ html, body {
   .header {
     padding: 0.8rem 0.5rem;
     background: linear-gradient(135deg, #081f45 0%, #1B262C 100%);
-  }
-  
-  .header.scrolled {
-    padding: 0.5rem;
-    background: rgba(8,31,69,0.98);
   }
   
   .header ul {
