@@ -12,11 +12,34 @@ export default function Chatbot() {
 
   const chatResponses = {
     greeting: ["Hello! How can I assist you today?", "Hi there! What would you like to know about Tye?"],
-    skills: ["Tye is proficient in React, Node.js, JavaScript, HTML/CSS and building responsive web applications.", "Tye's technical skills include web development with React, JavaScript, and working with APIs."],
-    experience: ["Tye has experience in web development, focusing on creating responsive and user-friendly applications.", "Tye has worked on various web development projects using modern technologies."],
-    contact: ["You can contact Tye through the contact form on this website, or via LinkedIn and Twitter links in the footer.", "Feel free to use the contact form to get in touch with Tye!"],
-    projects: ["Check out the Projects section to see Tye's portfolio of work.", "Tye has worked on several projects that showcase different skills. You can view them in the Projects section."],
-    resume: ["You can view Tye's resume in the Resume section.", "Feel free to download Tye's resume from the Resume section."],
+    skills: [
+      'Tye is proficient in React, Node.js, JavaScript, HTML/CSS and building responsive web applications. Check out the <a href="/skills" class="chatbot-link">Skills page</a> for more details.',
+      'Tye\'s technical skills include web development with React, JavaScript, and working with APIs. View the complete skillset on the <a href="/skills" class="chatbot-link">Skills page</a>.'
+    ],
+    about: [
+      'You can learn more about Tye on the <a href="/about" class="chatbot-link">About page</a>.',
+      'To know more about Tye\'s background and interests, check out the <a href="/about" class="chatbot-link">About page</a>.'
+    ],
+    experience: [
+      'Tye has experience in web development, focusing on creating responsive and user-friendly applications. Details are available on the <a href="/resume" class="chatbot-link">Resume page</a>.',
+      'Tye has worked on various web development projects using modern technologies. See the <a href="/resume" class="chatbot-link">Resume page</a> for the full work history.'
+    ],
+    contact: [
+      'You can contact Tye through the <a href="/contact" class="chatbot-link">Contact form</a> on this website, or via LinkedIn and Twitter links in the footer.',
+      'Feel free to use the <a href="/contact" class="chatbot-link">Contact page</a> to get in touch with Tye!'
+    ],
+    projects: [
+      'Check out <a href="/projects" class="chatbot-link">Tye\'s projects</a> to see the portfolio of work.',
+      'Tye has worked on several projects that showcase different skills. You can view them in the <a href="/projects" class="chatbot-link">Projects page</a>.'
+    ],
+    resume: [
+      'You can view <a href="/resume" class="chatbot-link">Tye\'s resume</a> in the Resume page.',
+      'Feel free to download Tye\'s resume from the <a href="/resume" class="chatbot-link">Resume page</a>.'
+    ],
+    home: [
+      'You can return to the <a href="/" class="chatbot-link">Home page</a> at any time.',
+      'The <a href="/" class="chatbot-link">Home page</a> contains an overview of Tye\'s portfolio.'
+    ],
     default: ["I'm not sure how to help with that. Could you try asking something else?", "Interesting question! You might want to contact Tye directly about that."]
   };
 
@@ -49,6 +72,9 @@ export default function Chatbot() {
     setTimeout(() => {
       const botResponse = getBotResponse(inputValue);
       setMessages(currentMessages => [...currentMessages, { text: botResponse, sender: 'bot' }]);
+      
+      // Focus the input field again after sending for better mobile experience
+      document.querySelector('.chatbot-input')?.focus();
     }, 600);
   };
 
@@ -59,14 +85,18 @@ export default function Chatbot() {
       return getRandomResponse('greeting');
     } else if (input.includes('skill') || input.includes('know') || input.includes('tech') || input.includes('stack')) {
       return getRandomResponse('skills');
-    } else if (input.includes('experience') || input.includes('work') || input.includes('background')) {
+    } else if (input.includes('about') || input.includes('who') || input.includes('bio')) {
+      return getRandomResponse('about');
+    } else if (input.includes('experience') || input.includes('work history') || input.includes('background')) {
       return getRandomResponse('experience');
-    } else if (input.includes('contact') || input.includes('email') || input.includes('reach')) {
+    } else if (input.includes('contact') || input.includes('email') || input.includes('reach') || input.includes('message')) {
       return getRandomResponse('contact');
-    } else if (input.includes('project') || input.includes('portfolio') || input.includes('work')) {
+    } else if (input.includes('project') || input.includes('portfolio')) {
       return getRandomResponse('projects');
     } else if (input.includes('resume') || input.includes('cv')) {
       return getRandomResponse('resume');
+    } else if (input.includes('home') || input.includes('main page') || input.includes('landing')) {
+      return getRandomResponse('home');
     } else {
       return getRandomResponse('default');
     }
@@ -81,16 +111,18 @@ export default function Chatbot() {
   return (
     <div className="chatbot-container">
       {isOpen && (
-        <div className="chatbot-window">
+        <div className="chatbot-window" aria-live="polite">
           <div className="chatbot-header">
             <h3>Chat with Tye's Assistant</h3>
-            <button className="close-button" onClick={toggleChat}>×</button>
+            <button className="close-button" onClick={toggleChat} aria-label="Close chat">×</button>
           </div>
           <div className="chatbot-messages">
             {messages.map((message, index) => (
-              <div key={index} className={`message ${message.sender}`}>
-                {message.text}
-              </div>
+              <div 
+                key={index} 
+                className={`message ${message.sender}`}
+                dangerouslySetInnerHTML={{ __html: message.text }}
+              />
             ))}
             <div ref={messagesEndRef} />
           </div>
