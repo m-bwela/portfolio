@@ -74,7 +74,7 @@
 .scroll-to-top-btn {
   position: fixed;
   bottom: 2.5rem;
-  right: 2.5rem;
+  left: 2.5rem; /* Changed from right to left */
   z-index: 1000;
   background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
   color: var(--white);
