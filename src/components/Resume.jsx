@@ -40,7 +40,7 @@ export default function Resume() {
                             <div className='resume-section'>
                                 <h3>Education</h3>
                                 <div className='resume-item'>
-                                    <h4>Diploma in Computer Science</h4>
+                                    <h4>Computer Science</h4>
                                     <h5>2020 - 2025</h5>
                                     <p>Mount Kenya University, focused on software development and web technologies.</p>
                                 </div>
