@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './About.css';
+import profileImage from '../../assets/images/profile.jpg';
 
 export default function About() {
     const location = useLocation();
@@ -30,7 +31,7 @@ export default function About() {
                         I create responsive and user-friendly web applications.
                     </div>
                 </div>
-                <img src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTExL3Jhd3BpeGVsX29mZmljZV8zMl9ibGFja19mbGF0X3ZlY3Rvcl9pbGx1c3RyYXRpb25fb2Zfc2V0X29mXzRfc183YWRhN2I5MC1iNDFhLTQwZmYtYWQxOC04MWNmZjQ4NWFlM2QtbTN3dXc4c3MucG5n.png" alt="About Me" />
+                <img src={profileImage} alt="Tye Nzambu - Web Developer" />
             </div>
             <div className='about-content'>
                 <div className='about-accordion'>
