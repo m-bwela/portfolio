@@ -27,6 +27,7 @@ export default function ScrollToTop() {
       aria-label="Scroll to top"
     >
       <span aria-hidden="true">↑</span>
+      <span>Back to Top</span>
     </button>
   );
 }

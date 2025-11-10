@@ -73,23 +73,27 @@
 /* Scroll to top button with enhanced animations and accessibility */
 .scroll-to-top-btn {
   position: fixed;
-  bottom: 2.5rem;
-  left: 2.5rem; /* Changed from right to left */
+  bottom: 2rem; /* Back to lower position since it's centered */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%) translateY(20px); /* Center and initial animation */
   z-index: 1000;
   background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
   color: var(--white);
-  border: none;
-  border-radius: 50%;
-  width: 52px;
-  height: 52px;
+  border: 1.5px solid transparent; /* Add transparent border to prevent shift on hover */
+  border-radius: 8px; /* Rectangular with rounded corners */
+  width: auto;
+  min-width: 120px;
+  height: 45px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
-  box-shadow: var(--shadow-lg);
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3), 0 0 0 2px rgba(255, 255, 255, 0.15);
   cursor: pointer;
   opacity: 0;
-  transform: translateY(20px);
   transition: all 0.3s var(--transition-bounce);
   outline: none;
   pointer-events: none;
@@ -97,27 +101,24 @@
 
 .scroll-to-top-btn.visible {
   opacity: 0.9;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0); /* Keep centered when visible */
   pointer-events: auto;
 }
 
 .scroll-to-top-btn:hover {
   background: var(--white);
   color: var(--primary);
-  transform: translateY(-4px);
+  transform: translateX(-50%) translateY(0) !important; /* No movement on hover, stay in place */
   box-shadow: var(--shadow-lg);
-  border: 1.5px solid var(--primary);
+  border-color: var(--primary); /* Changed from border: 1.5px solid to just border-color */
   opacity: 1;
 }
 
 .scroll-to-top-btn:active {
-  transform: translateY(-2px);
+  transform: translateX(-50%) translateY(0) !important; /* No movement on active, stay in place */
 }
 
-/* Enhanced visibility */
-.scroll-to-top-btn {
-  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3), 0 0 0 2px rgba(255, 255, 255, 0.15);
-}
+/* Enhanced visibility - REMOVED duplicate selector */
 
 .scroll-to-top-btn:focus-visible {
   outline: 2px solid var(--accent);
@@ -150,10 +151,10 @@
 @media (max-width: 600px) {
   .scroll-to-top-btn {
     bottom: 1.5rem;
-    right: 1.5rem;
-    width: 46px;
-    height: 46px;
-    font-size: 1.4rem;
+    min-width: 100px;
+    height: 40px;
+    padding: 0 16px;
+    font-size: 0.9rem;
   }
 }
 
@@ -162,12 +163,14 @@
   .home-link,
   .scroll-to-top-btn {
     transition: none;
-    transform: none;
   }
   
-  .home-link:hover,
+  .home-link:hover {
+    transform: translateY(-2px);
+  }
+  
   .scroll-to-top-btn:hover {
-    transform: none;
+    transform: translateX(-50%) translateY(0) !important;
     animation: none;
   }
   
