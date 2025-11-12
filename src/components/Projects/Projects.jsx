@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Projects.css';
+import PageNavigation from '../PageNavigation/PageNavigation';
 
 const projects = [
   {
@@ -53,6 +54,7 @@ export default function Projects() {
         ))}
       </div>
     </section>
+    <PageNavigation />
     </>
   );
 }

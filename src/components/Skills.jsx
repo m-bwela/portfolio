@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from 'react-router-dom';
+import PageNavigation from './PageNavigation/PageNavigation';
 
 const skillIcons = {
     HTML: { src: "https://simpleicons.org/icons/html5.svg", color: "#e34f26" },
@@ -82,6 +83,7 @@ export default function Skills() {
                     </div>
                 </div>
             </section>
+            <PageNavigation />
         </>
     )
 }

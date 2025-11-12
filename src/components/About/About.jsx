@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './About.css';
 import profileImage from '../../assets/images/profile.jpg';
+import PageNavigation from '../PageNavigation/PageNavigation';
 
 export default function About() {
     const location = useLocation();
@@ -60,6 +61,7 @@ export default function About() {
                 </div>
             </div>
         </section>
+        <PageNavigation />
         </>
     )
 }

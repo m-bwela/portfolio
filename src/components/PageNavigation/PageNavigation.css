@@ -1,0 +1,148 @@
+/* Page Navigation Styles */
+.page-navigation {
+  width: 100%;
+  padding: 2rem 0 3rem;
+  margin-top: 3rem;
+}
+
+.page-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.page-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(90deg, var(--primary, #007bff) 0%, var(--accent, #00c6ff) 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+  transition: all 0.3s ease;
+  min-width: 160px;
+  border: 2px solid transparent;
+}
+
+.page-nav-btn:hover {
+  background: white;
+  color: var(--primary, #007bff);
+  border-color: var(--primary, #007bff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.3);
+}
+
+.page-nav-btn.prev-btn {
+  justify-content: flex-start;
+}
+
+.page-nav-btn.next-btn {
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.nav-arrow {
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.page-nav-btn.prev-btn:hover .nav-arrow {
+  transform: translateX(-4px);
+}
+
+.page-nav-btn.next-btn:hover .nav-arrow {
+  transform: translateX(4px);
+}
+
+.nav-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: left;
+}
+
+.next-btn .nav-text {
+  text-align: right;
+}
+
+.nav-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.nav-page-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.page-nav-placeholder {
+  min-width: 160px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .page-nav-container {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+  
+  .page-nav-btn {
+    min-width: 130px;
+    padding: 0.8rem 1.2rem;
+  }
+  
+  .nav-arrow {
+    font-size: 1.25rem;
+  }
+  
+  .nav-label {
+    font-size: 0.7rem;
+  }
+  
+  .nav-page-name {
+    font-size: 0.9rem;
+  }
+  
+  .page-nav-placeholder {
+    min-width: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-navigation {
+    padding: 1.5rem 0 2.5rem;
+    margin-top: 2rem;
+  }
+  
+  .page-nav-container {
+    gap: 0.5rem;
+  }
+  
+  .page-nav-btn {
+    min-width: 100px;
+    padding: 0.7rem 1rem;
+    gap: 0.5rem;
+  }
+  
+  .nav-arrow {
+    font-size: 1.1rem;
+  }
+  
+  .nav-page-name {
+    font-size: 0.85rem;
+  }
+  
+  .page-nav-placeholder {
+    min-width: 100px;
+  }
+}

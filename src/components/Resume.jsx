@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Resume.css'; // We'll create this file
+import PageNavigation from './PageNavigation/PageNavigation';
 
 export default function Resume() {
     const location = useLocation();
@@ -67,6 +68,7 @@ export default function Resume() {
                     </div>
                 </div>
             </section>
+            <PageNavigation />
         </div>
         </>
     )

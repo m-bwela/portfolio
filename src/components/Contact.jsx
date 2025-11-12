@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import PageNavigation from './PageNavigation/PageNavigation';
 
 export default function Contact() {
     const location = useLocation();
@@ -87,6 +88,7 @@ export default function Contact() {
                 </form>
             </div>
             </section>
+            <PageNavigation />
         </>
     )
 }
