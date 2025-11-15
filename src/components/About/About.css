@@ -54,6 +54,11 @@
   overflow: hidden;
   box-shadow: 0 2px 16px rgba(0,0,0,0.09);
   background: #fff;
+  transition: transform 0.3s ease;
+}
+
+.about-image:hover {
+  transform: scale(1.02);
 }
 
 .about-image img {
@@ -61,12 +66,12 @@
   height: auto;
   display: block;
   border-radius: 1.2rem;
-  filter: grayscale(10%) brightness(0.97);
-  transition: filter 0.3s;
+  filter: blur(10px) grayscale(20%) brightness(0.8);
+  transition: filter 0.5s ease;
 }
 
 .about-image:hover img {
-  filter: grayscale(0%) brightness(1.05);
+  filter: blur(0) grayscale(0%) brightness(1);
 }
 
 .about-image-overlay {
@@ -81,6 +86,13 @@
   justify-content: flex-end;
   padding: 1.2rem;
   pointer-events: none;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.about-image:hover .about-image-overlay {
+  opacity: 0;
 }
 
 .about-image-title {

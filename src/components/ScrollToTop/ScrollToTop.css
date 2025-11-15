@@ -73,7 +73,7 @@
 /* Scroll to top button with enhanced animations and accessibility */
 .scroll-to-top-btn {
   position: fixed;
-  bottom: 2rem; /* Back to lower position since it's centered */
+  bottom: 6rem; /* Higher position to avoid footer overlap */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%) translateY(20px); /* Center and initial animation */
   z-index: 1000;
@@ -150,7 +150,7 @@
 
 @media (max-width: 600px) {
   .scroll-to-top-btn {
-    bottom: 1.5rem;
+    bottom: 5rem; /* Even higher on mobile to avoid footer */
     min-width: 100px;
     height: 40px;
     padding: 0 16px;

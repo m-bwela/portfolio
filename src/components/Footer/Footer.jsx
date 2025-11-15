@@ -12,17 +12,18 @@ export default function Footer() {
             <Link to='/contact'>Contact Me</Link>
 
             <div className='socials'>
-                <div className="socials">
-                    <a href='https://x.com/Tyejoseph1' target="_blank" rel="noopener noreferrer">
-                        <i className="fab fa-twitter"></i>
-                    </a>
-                    <a href='https://ke.linkedin.com/in/tye-joseph-0bb158239/' target="_blank" rel="noopener noreferrer">
-                        <i className="fab fa-linkedin"></i>
-                    </a>
-                    <a href='https://github.com/m-bwela' target="_blank" rel="noopener noreferrer">
-                        <i className="fab fa-github"></i>
-                    </a>
-                </div>
+                <a href='https://x.com/Tyejoseph1' target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-twitter"></i>
+                </a>
+                <a href='https://ke.linkedin.com/in/tye-joseph-0bb158239/' target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-linkedin"></i>
+                </a>
+                <a href='https://github.com/m-bwela' target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-github"></i>
+                </a>
+                <a href='https://stackoverflow.com/users/30053937' target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-stack-overflow"></i>
+                </a>
             </div>
         </footer>
     )

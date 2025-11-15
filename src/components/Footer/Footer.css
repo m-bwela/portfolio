@@ -98,6 +98,10 @@
   color: #1da1f2;
 }
 
+.footer .fa-stack-overflow:hover {
+  color: #F48024;
+}
+
 @media (max-width: 600px) {
   .footer {
     padding: 1.2rem 0 0.7rem 0;

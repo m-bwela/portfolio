@@ -59,7 +59,7 @@ export default function Contact() {
             </div>
         )}
             <section className='contact section' id='contact'>
-            <h2 className='section-title'>Contact Me 📞</h2>
+            <h2 className='section-title'>Get In Touch 📞</h2>
             <section className='contact-description'> 
                 <p>If you have any questions or inquiries, feel free to reach out!</p>
             </section>

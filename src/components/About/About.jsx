@@ -32,7 +32,10 @@ export default function About() {
                         I create responsive and user-friendly web applications.
                     </div>
                 </div>
-                <img src={profileImage} alt="Tye Nzambu - Web Developer" />
+                <img 
+                    src={profileImage} 
+                    alt="Tye Nzambu - Web Developer"
+                />
             </div>
             <div className='about-content'>
                 <div className='about-accordion'>
