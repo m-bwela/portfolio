@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "../context/ThemeContext";
 import Home from "./Home/Home";
 import About from "./About/About";
 import Projects from "./Projects/Projects";
@@ -11,25 +12,29 @@ import Privacy from "./Privacy/Privacy";
 import ScrollToTop from "./ScrollToTop/ScrollToTop";
 import Footer from "./Footer/Footer";
 import Chatbot from "./Chatbot/Chatbot";
+import ThemeToggle from "./ThemeToggle/ThemeToggle";
 
 export default function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="app">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/privacy" element={<Privacy />} />
-        </Routes>
-        <Footer />
-        <Chatbot />
-      </div>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <ScrollToTop />
+        <ThemeToggle />
+        <div className="app">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
+          </Routes>
+          <Footer />
+          <Chatbot />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
