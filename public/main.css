@@ -9,8 +9,10 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #07001f !important;
-  background-image: url("https://www.transparenttextures.com/patterns/football-no-lines.png") !important;
+  background-color: var(--bg-secondary) !important;
+  background-image: 
+    linear-gradient(to bottom, rgba(7, 0, 31, 0.97), rgba(7, 0, 31, 0.99)),
+    url("https://www.transparenttextures.com/patterns/football-no-lines.png") !important;
   background-size: cover;
   background-repeat: repeat;
   background-position: center center;
@@ -22,6 +24,16 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   transition: background 0.3s;
   overscroll-behavior: none; /* Prevents bounce on iOS */
+}
+
+/* Light theme background */
+[data-theme='light'] html,
+[data-theme='light'] body {
+  background-color: #f5f5f5 !important;
+  background-image: 
+    linear-gradient(to bottom, rgba(245, 245, 245, 0.97), rgba(245, 245, 245, 0.99)),
+    url("https://www.transparenttextures.com/patterns/football-no-lines.png") !important;
+  color: var(--text-primary);
 }
 
 
@@ -244,7 +256,7 @@ html, body {
 
 
 :root {
-  /* Color Palette */
+  /* Color Palette - Dark Theme */
   --primary-dark: #081f45;
   --primary: #007bff;
   --primary-light: #0090ff;
@@ -280,6 +292,18 @@ html, body {
   --radius-lg: 1.2rem;
 }
 
+/* Light Theme Variables */
+[data-theme='light'] {
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a4a4a;
+  --bg-dark: #f5f5f5;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-card-hover: rgba(255, 255, 255, 1);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.15);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.2);
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
@@ -307,6 +331,16 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   transition: background var(--transition-normal);
   overscroll-behavior: none;
+}
+
+/* Light theme background override */
+[data-theme='light'] html,
+[data-theme='light'] body {
+  background-color: #f5f5f5 !important;
+  background-image: 
+    linear-gradient(to bottom, rgba(245, 245, 245, 0.97), rgba(245, 245, 245, 0.99)),
+    url("https://www.transparenttextures.com/patterns/football-no-lines.png") !important;
+  color: var(--text-primary);
 }
 
 #root, .app {
@@ -858,4 +892,165 @@ html, body {
     max-width: 98vw;
   }
 }
+
+/* ========================================
+   LIGHT THEME STYLES
+   ======================================== */
+
+/* Light theme header */
+[data-theme='light'] .header {
+  background: linear-gradient(135deg, #4a90e2 0%, #5ca9fb 50%, #81c3ff 100%);
+  color: #1a1a2e;
+  box-shadow: 
+    0 4px 20px rgba(0,0,0,0.1),
+    0 0 0 1px rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+[data-theme='light'] .header .nav-link {
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
+  color: #1a1a2e;
+}
+
+[data-theme='light'] .nav-link.active,
+[data-theme='light'] .nav-link:hover {
+  background: rgba(255,255,255,0.95) !important;
+  color: #081f45 !important;
+  box-shadow: 
+    0 4px 20px rgba(0,123,255,0.2),
+    0 0 0 2px rgba(0,123,255,0.3);
+}
+
+/* Light theme home section */
+[data-theme='light'] .home-section {
+  background: linear-gradient(120deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+[data-theme='light'] .heading {
+  color: #1a1a2e;
+}
+
+[data-theme='light'] .heading-name {
+  color: #1565c0;
+}
+
+[data-theme='light'] .main-name {
+  color: #0277bd;
+}
+
+/* Light theme sections */
+[data-theme='light'] #skills.container {
+  background: linear-gradient(120deg, #e8eaf6 0%, #c5cae9 100%);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+[data-theme='light'] .section-title {
+  color: #1565c0;
+}
+
+[data-theme='light'] .section-title::after {
+  background: #1565c0;
+}
+
+[data-theme='light'] .col-md-4 {
+  background: #ffffff;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+[data-theme='light'] .col-md-4:hover {
+  box-shadow: 0 8px 32px rgba(0,123,255,0.15);
+}
+
+[data-theme='light'] .col-md-4 h3 {
+  color: #1565c0;
+}
+
+[data-theme='light'] .col-md-4 ul li {
+  color: #1a1a2e;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+[data-theme='light'] .col-md-4 ul li:hover {
+  color: #0277bd;
+}
+
+/* Light theme resume section */
+[data-theme='light'] .resume.section-bg {
+  background: linear-gradient(120deg, #e3f2fd 0%, #bbdefb 100%);
+  border: 1px solid rgba(0,123,255,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+[data-theme='light'] .resume-title {
+  color: #1a1a2e;
+}
+
+[data-theme='light'] .resume-content p {
+  color: #1a1a2e;
+}
+
+/* Light theme contact section */
+[data-theme='light'] .contact.section {
+  background: linear-gradient(120deg, #e0f2f1 0%, #b2dfdb 100%);
+}
+
+[data-theme='light'] .contact-description {
+  color: #1a1a2e;
+}
+
+[data-theme='light'] .contact-list li {
+  color: #1a1a2e;
+}
+
+[data-theme='light'] .contact-icon {
+  color: #00695c;
+}
+
+[data-theme='light'] .contact-list a {
+  color: #00695c;
+}
+
+[data-theme='light'] .contact-list a:hover {
+  color: #00897b;
+}
+
+[data-theme='light'] .contact-form {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+[data-theme='light'] .contact-form input,
+[data-theme='light'] .contact-form textarea {
+  border: 1px solid rgba(0,0,0,0.2);
+  background: rgba(255, 255, 255, 0.95);
+  color: #1a1a2e;
+}
+
+[data-theme='light'] .contact-form input::placeholder,
+[data-theme='light'] .contact-form textarea::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme='light'] .contact-form input:hover,
+[data-theme='light'] .contact-form textarea:hover {
+  border-color: rgba(0,0,0,0.3);
+  background: rgba(255, 255, 255, 1);
+}
+
+[data-theme='light'] .contact-form input:focus,
+[data-theme='light'] .contact-form textarea:focus {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 0 3px rgba(0,144,255,0.15);
+}
+
+/* Light theme text colors */
+[data-theme='light'] .app {
+  color: #1a1a2e;
+}
+
+[data-theme='light'] #root {
+  color: #1a1a2e;
+}
+
 
