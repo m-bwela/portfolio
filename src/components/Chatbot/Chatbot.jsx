@@ -25,7 +25,7 @@ export default function Chatbot() {
       'Tye has worked on various web development projects using modern technologies. See the <a href="/resume" class="chatbot-link">Resume page</a> for the full work history.'
     ],
     contact: [
-      'You can contact Tye through the <a href="/contact" class="chatbot-link">Contact form</a> on this website, or via LinkedIn and Twitter links in the footer.',
+      'You can contact Tye through the <a href="/contact" class="chatbot-link">Contact form</a> on this website, or check out the <a href="/online-presence" class="chatbot-link">Online Presence page</a> for all social links.',
       'Feel free to use the <a href="/contact" class="chatbot-link">Contact page</a> to get in touch with Tye!'
     ],
     projects: [
@@ -39,6 +39,10 @@ export default function Chatbot() {
     home: [
       'You can return to the <a href="/" class="chatbot-link">Home page</a> at any time.',
       'The <a href="/" class="chatbot-link">Home page</a> contains an overview of Tye\'s portfolio.'
+    ],
+    socials: [
+      'You can find all of Tye\'s social media profiles on the <a href="/online-presence" class="chatbot-link">Online Presence page</a>.',
+      'Check out the <a href="/online-presence" class="chatbot-link">Online Presence page</a> to connect with Tye on Twitter, LinkedIn, GitHub, and Stack Overflow.'
     ],
     default: ["I'm not sure how to help with that. Could you try asking something else?", "Interesting question! You might want to contact Tye directly about that."]
   };
@@ -97,6 +101,8 @@ export default function Chatbot() {
       return getRandomResponse('resume');
     } else if (input.includes('home') || input.includes('main page') || input.includes('landing')) {
       return getRandomResponse('home');
+    } else if (input.includes('social') || input.includes('twitter') || input.includes('linkedin') || input.includes('github') || input.includes('stack overflow') || input.includes('connect')) {
+      return getRandomResponse('socials');
     } else {
       return getRandomResponse('default');
     }

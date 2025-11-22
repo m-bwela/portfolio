@@ -56,62 +56,9 @@
   text-decoration: underline;
 }
 
-.footer .socials {
-  margin-top: 1.2rem;
-}
-
-.footer .socials a {
-  display: inline-block;
-  margin: 0 0.7rem;
-  font-size: 1.7rem;
-  color: #fff;
-  transition: color 0.2s, transform 0.2s, background 0.2s;
-  background: rgba(255,255,255,0.08);
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  line-height: 44px;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.footer .socials a:hover {
-  color: #00c6ff;
-  background: #fff;
-  transform: translateY(-2px) scale(1.1);
-}
-
-.footer .socials a .fa-brands {
-  vertical-align: middle;
-  font-size: 1.4em;
-}
-
-.footer .fa-github:hover {
-  color: #333;
-}
-
-.footer .fa-linkedin:hover {
-  color: #0077b5;
-}
-
-.footer .fa-twitter:hover {
-  color: #1da1f2;
-}
-
-.footer .fa-stack-overflow:hover {
-  color: #F48024;
-}
-
 @media (max-width: 600px) {
   .footer {
     padding: 1.2rem 0 0.7rem 0;
     font-size: 0.98rem;
-  }
-  .footer .socials a {
-    font-size: 1.2rem;
-    width: 36px;
-    height: 36px;
-    line-height: 36px;
-    margin: 0 0.4rem;
   }
 }

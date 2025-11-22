@@ -12,7 +12,8 @@ export default function PageNavigation() {
     { path: '/projects', name: 'Projects' },
     { path: '/skills', name: 'Skills' },
     { path: '/resume', name: 'Resume' },
-    { path: '/contact', name: 'Contact' }
+    { path: '/contact', name: 'Contact' },
+    { path: '/online-presence', name: 'Online Presence' }
   ];
   
   // Find current page index
