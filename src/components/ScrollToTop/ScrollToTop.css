@@ -72,47 +72,46 @@
 
 /* Scroll to top button with enhanced animations and accessibility */
 .scroll-to-top-btn {
-  position: fixed;
-  bottom: 6rem; /* Higher position to avoid footer overlap */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%) translateY(20px); /* Center and initial animation */
-  z-index: 1000;
-  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
-  color: var(--white);
-  border: 1.5px solid transparent; /* Add transparent border to prevent shift on hover */
-  border-radius: 8px; /* Rectangular with rounded corners */
+  position: fixed !important;
+  bottom: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999 !important;
+  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  color: #ffffff;
+  border: 2px solid transparent;
+  border-radius: 8px;
   width: auto;
-  min-width: 120px;
-  height: 45px;
+  min-width: 130px;
+  height: 48px;
   padding: 0 20px;
-  display: none; /* Hidden by default */
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   font-size: 1rem;
   font-weight: 600;
-  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3), 0 0 0 2px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4);
   cursor: pointer;
   opacity: 0;
-  transition: all 0.3s var(--transition-bounce);
+  visibility: hidden;
+  transition: all 0.3s ease;
   outline: none;
   pointer-events: none;
 }
 
 .scroll-to-top-btn.visible {
-  display: flex !important; /* Show when visible */
-  opacity: 0.9;
-  transform: translateX(-50%) translateY(0); /* Keep centered when visible */
-  pointer-events: auto;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 
 .scroll-to-top-btn:hover {
-  background: var(--white);
-  color: var(--primary);
-  transform: translateX(-50%) translateY(0) !important; /* No movement on hover, stay in place */
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary); /* Changed from border: 1.5px solid to just border-color */
-  opacity: 1;
+  background: #ffffff;
+  color: #007bff;
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 6px 24px rgba(0, 123, 255, 0.4);
+  border-color: #007bff;
 }
 
 .scroll-to-top-btn:active {
@@ -147,31 +146,39 @@
     padding: 0.6rem 1.4rem;
     font-size: 1rem;
   }
+
+  .scroll-to-top-btn {
+    bottom: 2rem;
+    right: 1rem;
+    left: auto;
+    transform: none;
+    min-width: auto;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 1.2rem;
+  }
+
+  .scroll-to-top-btn span:last-child {
+    display: none; /* Hide "Back to Top" text on mobile */
+  }
+
+  .scroll-to-top-btn span:first-child {
+    font-size: 1.4rem;
+  }
+
+  .scroll-to-top-btn:hover {
+    transform: scale(1.1);
+  }
 }
 
 @media (max-width: 600px) {
   .scroll-to-top-btn {
-    bottom: 5rem;
-    left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    min-width: 110px;
-    height: 42px;
-    padding: 0 14px;
-    font-size: 0.85rem;
-    z-index: 9999;
-  }
-
-  .scroll-to-top-btn.visible {
-    display: flex !important;
-    opacity: 1 !important;
-    transform: translateX(-50%) translateY(0) !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-  }
-
-  .scroll-to-top-btn:hover,
-  .scroll-to-top-btn:active {
-    transform: translateX(-50%) translateY(0) !important;
+    bottom: 1.5rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
   }
 }
 

@@ -6,7 +6,14 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setVisible(window.scrollY > 200);
+      // Show button only when near the bottom of the page
+      const scrollHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+      const clientHeight = window.innerHeight;
+      const distanceFromBottom = scrollHeight - scrollTop - clientHeight;
+      
+      // Show when within 300px of the bottom
+      setVisible(distanceFromBottom < 300 && scrollTop > 200);
     };
     window.addEventListener('scroll', handleScroll);
     // Trigger initial check

@@ -6,7 +6,6 @@ html {
 
 html, body {
   min-height: 100vh;
-  height: 100%;
   margin: 0;
   padding: 0;
   background-color: #07001f !important;
@@ -291,7 +290,6 @@ html {
 
 html, body {
   min-height: 100vh;
-  height: 100%;
   margin: 0;
   padding: 0;
   background-color: var(--bg-dark) !important;

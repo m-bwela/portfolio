@@ -16,7 +16,6 @@ import Chatbot from "./Chatbot/Chatbot";
 export default function App() {
   return (
     <Router>
-      <ScrollToTop />
       <div className="app">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -30,6 +29,7 @@ export default function App() {
           <Route path="/privacy" element={<Privacy />} />
         </Routes>
         <Footer />
+        <ScrollToTop />
         <Chatbot />
       </div>
     </Router>
