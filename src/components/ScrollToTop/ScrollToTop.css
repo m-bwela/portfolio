@@ -85,7 +85,7 @@
   min-width: 120px;
   height: 45px;
   padding: 0 20px;
-  display: flex;
+  display: none; /* Hidden by default */
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -100,6 +100,7 @@
 }
 
 .scroll-to-top-btn.visible {
+  display: flex !important; /* Show when visible */
   opacity: 0.9;
   transform: translateX(-50%) translateY(0); /* Keep centered when visible */
   pointer-events: auto;
@@ -150,19 +151,22 @@
 
 @media (max-width: 600px) {
   .scroll-to-top-btn {
-    bottom: 4rem;
+    bottom: 5rem;
     left: 50%;
     transform: translateX(-50%) translateY(20px);
     min-width: 110px;
     height: 42px;
     padding: 0 14px;
     font-size: 0.85rem;
-    z-index: 1001;
+    z-index: 9999;
   }
 
   .scroll-to-top-btn.visible {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    display: flex !important;
+    opacity: 1 !important;
+    transform: translateX(-50%) translateY(0) !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
   }
 
   .scroll-to-top-btn:hover,

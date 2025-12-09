@@ -23,7 +23,6 @@ export default function ScrollToTop() {
     <button 
       className={`scroll-to-top-btn ${visible ? 'visible pulse' : ''}`} 
       onClick={handleClick}
-      style={{ display: visible ? 'flex' : 'none' }}
       aria-label="Scroll to top"
     >
       <span aria-hidden="true">↑</span>
