@@ -104,79 +104,12 @@
   transform: translateX(0);
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments - hide on mobile */
 @media (max-width: 768px) {
   .side-nav {
-    top: auto;
-    bottom: 5rem;
-    right: 1rem;
-    left: auto;
-    transform: translateX(100%);
-    border-radius: 12px;
-    border-right: none;
-    border-left: none;
-    border: 2px solid #0090ff;
-    padding: 8px;
-    width: auto;
-    opacity: 0;
-    visibility: hidden;
-    background: rgba(8, 31, 69, 0.98);
-    z-index: 99997 !important;
-    box-shadow: 0 4px 20px rgba(0, 144, 255, 0.3);
-  }
-  
-  .side-nav.visible {
-    transform: translateX(0) !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  .side-nav:hover, 
-  .side-nav:focus-within {
-    transform: translateX(0) !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-  
-  .side-nav-content {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 4px;
-    padding: 2px;
-    max-width: 140px;
-    justify-content: center;
-  }
-  
-  .side-nav-item {
-    padding: 8px;
-    border-radius: 8px;
-    width: 40px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .side-nav-icon {
-    margin-right: 0;
-    font-size: 1.2rem;
-  }
-  
-  .side-nav-label {
-    display: none;
-  }
-  
-  .side-nav-item.active {
-    background: rgba(255, 255, 255, 0.2);
-    border-left: none;
-    border-right: 3px solid var(--sidenav-accent);
-  }
-  
-  .side-nav-item.active::before {
-    left: auto;
-    right: 0;
-    width: 3px;
-    height: 100%;
-    top: 0;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
   }
 }
 
@@ -192,23 +125,6 @@
   }
 }
 
-@keyframes sidenav-entry-right {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
 .side-nav.visible {
   animation: sidenav-entry-left 0.5s forwards;
-}
-
-@media (max-width: 768px) {
-  .side-nav.visible {
-    animation: sidenav-entry-right 0.5s forwards;
-  }
 }
