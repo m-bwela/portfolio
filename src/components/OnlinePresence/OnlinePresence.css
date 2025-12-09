@@ -40,6 +40,7 @@
   background: linear-gradient(135deg, #1B262C 0%, #1B1A55 100%);
   border-radius: 1.5rem;
   box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 
 .section-title {
@@ -63,7 +64,8 @@
 
 .social-cards {
   position: relative;
-  width: 700px;
+  width: 100%;
+  max-width: 700px;
   height: 500px;
   margin: 3rem auto;
   display: flex;
