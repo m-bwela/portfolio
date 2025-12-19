@@ -17,7 +17,7 @@ export default function OnlinePresence() {
         {
             name: 'LinkedIn',
             icon: 'fab fa-linkedin',
-            url: 'https://ke.linkedin.com/in/tye-joseph-0bb158239/',
+            url: 'https://www.linkedin.com/tye-nzambu-07254muzan/',
             color: '#0077B5',
             description: 'Connect with me professionally'
         },
