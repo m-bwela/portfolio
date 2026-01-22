@@ -71,7 +71,7 @@ export default function Contact() {
                     <strong className='contact-icon'>Phone:</strong> <a href="tel:+254714430308">+254 714 430 308</a>
                 </li>
                 <li>
-                    <strong className='contact-icon'>LinkedIn:</strong> <a href="https://ke.linkedin.com/in/tye-joseph-0bb158239/" target="_blank" rel="noopener noreferrer">linkedin.com/in/tye-joseph-0bb158239/</a>
+                    <strong className='contact-icon'>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tye-nzambu-07254muzan" target="_blank" rel="noopener noreferrer">linkedin.com/in/tye-nzambu-07254muzan</a>
                 </li>
                 <li>
                     <strong className='contact-icon'>GitHub:</strong> <a href="https://github.com/m-bwela" target="_blank" rel="noopener noreferrer">github.com/m-bwela</a>
@@ -83,8 +83,8 @@ export default function Contact() {
                     <input type="email" name="email" placeholder="Your Email" onFocus={handleFocus} onBlur={handleBlur} required />
                     <textarea name="message" placeholder="Your Message" onFocus={handleFocus} onBlur={handleBlur} required></textarea>
                     <button type="submit" disabled={status === 'loading'}>{status === 'loading' ? 'Sending...' : 'Send'}</button>
-                    {status === 'success' && <p className='form-success' style={{ color: '#1b7a3e', marginTop: '0.75rem' }}>Thanks — your message has been sent.</p>}
-                    {status === 'error' && <p className='form-error' style={{ color: '#b00020', marginTop: '0.75rem' }}>Something went wrong — please try again later.</p>}
+                    {status === 'success' && <p className='form-success' style={{ color: '#7c3aed', marginTop: '0.75rem' }}>Thanks — your message has been sent.</p>}
+                    {status === 'error' && <p className='form-error' style={{ color: '#a259f7', marginTop: '0.75rem' }}>Something went wrong — please try again later.</p>}
                 </form>
             </div>
             </section>

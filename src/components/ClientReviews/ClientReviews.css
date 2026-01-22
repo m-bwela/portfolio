@@ -127,21 +127,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 340px;
+  min-height: 400px;
   position: relative;
   width: 100%;
   padding: 1rem;
+  overflow: hidden;
+}
+
+.reviews-cards-container {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  justify-content: center;
 }
 
 .review-card {
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  left: 0; right: 0; top: 0; bottom: 0;
-  margin: auto;
-  transition: all 0.5s ease;
-  width: 100%;
-  max-width: 380px;
+  flex: 0 0 calc(33.333% - 1rem);
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.12);
   border-radius: 1rem;
@@ -149,14 +150,31 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transform: translateY(20px) scale(0.95);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
 }
 
-.review-card.active {
-  opacity: 1;
-  pointer-events: auto;
-  position: relative;
-  transform: translateY(0) scale(1);
+.review-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s ease;
+  z-index: 1;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.review-card:hover::before {
+  left: 100%;
 }
 
 @media (max-width: 600px) {
@@ -202,21 +220,23 @@
   box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.2);
 }
 
-.review-rating {
-  margin-top: 0.8rem;
-  font-size: 1.1rem;
-  color: #ffb400;
-  display: flex;
-  justify-content: center;
-  gap: 4px;
+.review-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  display: block;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.5s ease;
 }
 
-/* Add styles for review content */
 .review-content {
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 1rem 0;
   color: #333;
+  transition: all 0.5s ease;
 }
 
 .review-author {
@@ -224,45 +244,45 @@
   margin-top: 1rem;
   color: #2B2E4A;
   font-size: 1.1rem;
+  transition: all 0.5s ease;
 }
 
 /* Mobile optimizations */
 @media (max-width: 900px) {
   .reviews-slideshow {
-    min-height: 400px;
+    min-height: 450px;
   }
-  
-  .reviews-dots {
-    margin-top: 1rem;
-    gap: 0.6rem;
+
+  .reviews-cards-container {
+    gap: 1rem;
   }
-  
-  .dot {
-    width: 12px;
-    height: 12px;
+
+  .review-card {
+    flex: 0 0 calc(50% - 0.5rem);
+    padding: 1.2rem;
   }
 }
 
 @media (max-width: 600px) {
   .reviews-slideshow {
-    min-height: 430px;
+    min-height: 600px;
+    padding: 0.5rem;
   }
-  
-  .review-content {
-    font-size: 0.9rem;
+
+  .reviews-cards-container {
+    flex-direction: column;
+    gap: 1rem;
   }
-  
-  .review-author {
-    font-size: 1rem;
-  }
-  
-  .review-rating {
-    font-size: 1rem;
+
+  .review-card {
+    flex: none;
+    width: 100%;
+    padding: 1rem;
   }
 }
 
-/* Animations for smooth transitions */
-@keyframes fadeInUp {
+/* Smooth sliding carousel animations */
+@keyframes slideIn {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -273,16 +293,6 @@
   }
 }
 
-.active .review-content,
-.active .review-author,
-.active .review-rating {
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.active .review-author {
-  animation-delay: 0.1s;
-}
-
-.active .review-rating {
-  animation-delay: 0.2s;
+.review-card {
+  animation: slideIn 0.6s ease forwards;
 }

@@ -54,37 +54,49 @@ const reviews = [
 ];
 
 export default function ClientReviews() {
-  const [current, setCurrent] = useState(0);
-  // Auto-advance every 5 seconds
+  const [cardStates, setCardStates] = useState([0, 1, 2]); // Each card shows different review initially
+
+  // Each card cycles independently with different intervals
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setCurrent((prev) => (prev + 1) % reviews.length);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, [current]);
+    const intervals = [
+      // Card 1: changes every 4 seconds
+      setInterval(() => {
+        setCardStates(prev => [prev[0] === reviews.length - 1 ? 0 : prev[0] + 1, prev[1], prev[2]]);
+      }, 4000),
+      // Card 2: changes every 5 seconds
+      setInterval(() => {
+        setCardStates(prev => [prev[0], prev[1] === reviews.length - 1 ? 0 : prev[1] + 1, prev[2]]);
+      }, 5000),
+      // Card 3: changes every 6 seconds
+      setInterval(() => {
+        setCardStates(prev => [prev[0], prev[1], prev[2] === reviews.length - 1 ? 0 : prev[2] + 1]);
+      }, 6000)
+    ];
+
+    return () => intervals.forEach(clearInterval);
+  }, []);
 
   return (
     <div className="client-reviews-container">
       <section className="reviews-section">
         <h2 className="reviews-title">Client Reviews</h2>
         <div className="reviews-slideshow">
-          <div className="review-card active">
-            <img src={reviews[current].avatar} alt={reviews[current].name} className="review-avatar" />
-            <div className="review-content">
-              <p className="review-text">"{reviews[current].review}"</p>
-              <p className="review-author">
-                {reviews[current].name} <span className="review-company">({reviews[current].company})</span>
-              </p>
-              <p className="review-rating">Rating: {"★".repeat(reviews[current].rate)}{"☆".repeat(5 - reviews[current].rate)}</p>
-            </div>
-          </div>
-          <div className="reviews-dots">
-            {reviews.map((_, idx) => (
-              <span
-                key={idx}
-                className={`dot${idx === current ? " active" : ""}`}
-                onClick={() => setCurrent(idx)}
-              />
+          <div className="reviews-cards-container">
+            {[0, 1, 2].map((cardIndex) => (
+              <div key={cardIndex} className="review-card">
+                <img
+                  src={reviews[cardStates[cardIndex]].avatar}
+                  alt={reviews[cardStates[cardIndex]].name}
+                  className="review-avatar"
+                />
+                <div className="review-content">
+                  <p className="review-text">"{reviews[cardStates[cardIndex]].review}"</p>
+                  <p className="review-author">
+                    {reviews[cardStates[cardIndex]].name} <span className="review-company">({reviews[cardStates[cardIndex]].company})</span>
+                  </p>
+                  <p className="review-rating">Rating: {"★".repeat(reviews[cardStates[cardIndex]].rate)}{"☆".repeat(5 - reviews[cardStates[cardIndex]].rate)}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>

@@ -1,12 +1,12 @@
 /* Base styles */
 :root {
-  --primary: #007bff;
-  --primary-light: #4cc9f0;
-  --secondary: #4361ee;
-  --secondary-dark: #3a0ca3;
-  --dark: #1a1a2e;
-  --dark-alt: #16213e;
-  --light: #f0f0f0;
+  --primary: #a259f7;
+  --primary-light: #c084fc;
+  --secondary: #7c3aed;
+  --secondary-dark: #1a0025;
+  --dark: #0a0014;
+  --dark-alt: #07001f;
+  --light: #f3f0ff;
   --white: #ffffff;
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
   --shadow-md: 0 4px 16px rgba(0,0,0,0.15);

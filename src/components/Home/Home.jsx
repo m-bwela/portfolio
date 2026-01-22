@@ -61,9 +61,24 @@ export default function Home() {
                 <strong className="main-name"> TYE NZAMBU</strong>
               </h1>
               <Home2 />
-                <div className='resume-download'>
-                    <a href="/src/assets/resume_template.pdf" className="btn btn-primary" download>Download Resume</a>
+                <div className="portfolio-stats">
+                <div className="stat">
+                  <span className="stat-number">1+</span>
+                  <span className="stat-label">Years Experience</span>
                 </div>
+                <div className="stat">
+                  <span className="stat-number">12</span>
+                  <span className="stat-label">Projects</span>
+                </div>
+                <div className="stat">
+                  <span className="stat-number">5+</span>
+                  <span className="stat-label">Clients</span>
+                </div>
+                <div className="stat">
+                  <span className="stat-number">10+</span>
+                  <span className="stat-label">Technologies</span>
+                </div>
+              </div>
               <div style={{ padding: 50, textAlign: "left" }}>
               </div>
             </Col>

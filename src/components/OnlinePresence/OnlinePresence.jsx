@@ -11,35 +11,35 @@ export default function OnlinePresence() {
             name: 'Twitter',
             icon: 'fab fa-twitter',
             url: 'https://x.com/Tyejoseph1',
-            color: '#1DA1F2',
+            color: '#7c3aed',
             description: 'Follow me for tech updates and insights'
         },
         {
             name: 'LinkedIn',
             icon: 'fab fa-linkedin',
             url: 'https://www.linkedin.com/in/tye-nzambu-07254muzan',
-            color: '#0077B5',
+            color: '#a259f7',
             description: 'Connect with me professionally'
         },
         {
             name: 'GitHub',
             icon: 'fab fa-github',
             url: 'https://github.com/m-bwela',
-            color: '#333',
+            color: '#000000',
             description: 'Check out my code and projects'
         },
         {
             name: 'Stack Overflow',
             icon: 'fab fa-stack-overflow',
             url: 'https://stackoverflow.com/users/30053937',
-            color: '#F48024',
+            color: '#a259f7',
             description: 'See my contributions and answers'
         },
         {
             name: 'Geeksforgeeks',
             icon: 'fas fa-code',
             url: 'https://www.geeksforgeeks.org/user/tyejosegbd5/',
-            color: '#0F9D58',
+            color: '#c084fc',
             description: 'Explore coding tutorials and challenges'
         }
     ];
