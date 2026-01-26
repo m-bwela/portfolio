@@ -5,7 +5,7 @@ html {
 }
 
 html, body {
-  min-height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 0;
   background-color: #07001f !important;
@@ -25,6 +25,23 @@ html, body {
   max-width: 100vw;
   overflow-x: auto; /* Allow horizontal scrolling if needed */
   overflow-y: auto; /* Ensure vertical scrolling works */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
+
+/* Mobile-specific scrolling fixes */
+@media screen and (max-width: 768px) {
+  html, body {
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y; /* Allow vertical scrolling */
+  }
+
+  #root, .app {
+    height: auto;
+    min-height: 100vh;
+  }
 }
 
 
@@ -266,30 +283,9 @@ html {
   touch-action: manipulation;
 }
 
-html, body {
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg-dark) !important;
-  background-image: 
-    linear-gradient(to bottom, rgba(7, 0, 31, 0.97), rgba(7, 0, 31, 0.99)),
-    url("https://www.transparenttextures.com/patterns/football-no-lines.png") !important;
-  background-size: cover;
-  background-repeat: repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-  font-size: clamp(1rem, 1.5vw, 1.1rem);
-  line-height: 1.7;
-  color: var(--text-primary);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transition: background var(--transition-normal);
-  overscroll-behavior: none;
-}
-
 #root, .app {
   background: transparent;
+  height: auto;
   min-height: 100vh;
 }
 .nav-link.active,
