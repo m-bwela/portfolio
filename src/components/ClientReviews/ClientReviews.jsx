@@ -50,6 +50,27 @@ const reviews = [
     review: "Their creativity and technical skills brought our vision to life in ways we never imagined.",
     avatar: "https://randomuser.me/api/portraits/women/55.jpg",
     rate: 4
+  },
+  {
+    name: "Robert Wilson",
+    company: "Enterprise Solutions",
+    review: "Reliable, efficient, and highly skilled. A great asset to any project.",
+    avatar: "https://randomuser.me/api/portraits/men/52.jpg",
+    rate: 5
+  },
+  {
+    name: "Laura Martinez",
+    company: "Global Tech",
+    review: "Exceeded our expectations in every way. Highly recommend for complex web applications.",
+    avatar: "https://randomuser.me/api/portraits/women/60.jpg",
+    rate: 3
+  },
+  {
+    name: "James Anderson",
+    company: "Digital Dynamics",
+    review: "A pleasure to work with! Delivered top-notch solutions on time and within budget.",
+    avatar: "https://randomuser.me/api/portraits/men/53.jpg",
+    rate: 4
   }
 ];
 
