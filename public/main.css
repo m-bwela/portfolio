@@ -13,17 +13,18 @@ html, body {
   background-size: cover;
   background-repeat: repeat;
   background-position: center center;
-  background-attachment: fixed;
+  background-attachment: scroll; /* Changed from fixed for better mobile performance */
   font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   font-size: 1.05rem;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background 0.3s;
-  overscroll-behavior: none; /* Prevents bounce on iOS */
-  overflow-x: hidden; /* Prevents horizontal scrolling on mobile */
+  /* Removed overscroll-behavior: none and overflow-x: hidden that were preventing mobile scrolling */
   width: 100%;
   max-width: 100vw;
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  overflow-y: auto; /* Ensure vertical scrolling works */
 }
 
 
