@@ -70,119 +70,198 @@
   box-shadow: var(--shadow-sm);
 }
 
-/* Scroll to top button with enhanced animations and accessibility */
-.scroll-to-top-btn {
-  position: fixed !important;
-  bottom: 6rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 99999 !important;
-  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
-  color: #ffffff;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  width: auto;
-  min-width: 130px;
-  height: 48px;
-  padding: 0 20px;
+/* ── Scroll-to-top circular progress button ── */
+.scroll-progress-btn {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 99999;
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(12, 12, 29, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4);
-  cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
-  outline: none;
   pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease,
+    background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.25);
+  outline: none;
+  /* Safe-area for notched phones */
+  bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+  left: calc(2rem + env(safe-area-inset-left, 0px));
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
-.scroll-to-top-btn.visible {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
+.scroll-progress-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
-.scroll-to-top-btn:hover {
-  background: #ffffff;
-  color: #007bff;
-  transform: translateX(-50%) scale(1.05);
-  box-shadow: 0 6px 24px rgba(0, 123, 255, 0.4);
-  border-color: #007bff;
+.scroll-progress-btn:hover {
+  background: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 6px 28px rgba(124, 58, 237, 0.45);
 }
 
-.scroll-to-top-btn:active {
-  transform: translateX(-50%) translateY(0) !important; /* No movement on active, stay in place */
+.scroll-progress-btn:active {
+  transform: scale(0.92);
 }
 
-/* Enhanced visibility - REMOVED duplicate selector */
-
-.scroll-to-top-btn:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 4px;
+.scroll-progress-btn:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 3px;
 }
 
-/* Pulse animation for better visibility */
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(0,123,255,0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(0,123,255,0); }
-  100% { box-shadow: 0 0 0 0 rgba(0,123,255,0); }
+/* SVG progress ring — scales to fill container via viewBox */
+.scroll-progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
 }
 
-.scroll-to-top-btn.pulse {
-  animation: pulse 2s infinite;
+.scroll-progress-bg {
+  fill: none;
+  stroke: rgba(124, 58, 237, 0.2);
 }
 
-/* Responsive design improvements */
+.scroll-progress-fill {
+  fill: none;
+  stroke: #a78bfa;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.15s ease;
+}
+
+/* Stacked label: percent + arrow */
+.scroll-progress-label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.scroll-progress-percent {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #e0d4ff;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.scroll-progress-arrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #e0d4ff;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.scroll-progress-btn:hover .scroll-progress-label {
+  transform: translateY(-1px);
+}
+
+.scroll-progress-btn:hover .scroll-progress-percent,
+.scroll-progress-btn:hover .scroll-progress-arrow {
+  color: #ffffff;
+}
+
+/* ── Tablet ── */
 @media (max-width: 768px) {
   .home-link-wrap {
     margin: 1.2rem 0 1rem 1rem;
   }
-  
+
   .home-link {
     padding: 0.6rem 1.4rem;
     font-size: 1rem;
   }
 
-  .scroll-to-top-btn {
-    bottom: 2rem;
-    min-width: 120px;
-    height: 44px;
-    padding: 0 16px;
-    font-size: 0.9rem;
+  .scroll-progress-btn {
+    width: 50px;
+    height: 50px;
+    bottom: calc(1.4rem + env(safe-area-inset-bottom, 0px));
+    left: calc(1.2rem + env(safe-area-inset-left, 0px));
+  }
+
+  .scroll-progress-percent {
+    font-size: 0.55rem;
+  }
+
+  .scroll-progress-arrow {
+    font-size: 0.8rem;
   }
 }
 
+/* ── Small phones ── */
 @media (max-width: 480px) {
-  .scroll-to-top-btn {
-    bottom: 1.5rem;
-    min-width: 110px;
-    height: 42px;
-    padding: 0 14px;
-    font-size: 0.85rem;
+  .scroll-progress-btn {
+    width: 46px;
+    height: 46px;
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    left: calc(1rem + env(safe-area-inset-left, 0px));
+  }
+
+  .scroll-progress-percent {
+    font-size: 0.5rem;
+  }
+
+  .scroll-progress-arrow {
+    font-size: 0.75rem;
   }
 }
 
-/* Reduced motion preferences */
+/* ── Landscape phones — move button up to avoid thumb zone ── */
+@media (max-height: 500px) and (orientation: landscape) {
+  .scroll-progress-btn {
+    bottom: auto;
+    top: 1rem;
+    left: 1rem;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
-  .home-link,
-  .scroll-to-top-btn {
+  .scroll-progress-btn {
+    transition: none;
+    transform: none;
+  }
+
+  .scroll-progress-btn.visible {
+    transform: none;
+  }
+
+  .scroll-progress-fill {
     transition: none;
   }
-  
-  .home-link:hover {
-    transform: translateY(-2px);
+
+  .scroll-progress-arrow,
+  .scroll-progress-percent,
+  .scroll-progress-label {
+    transition: none;
   }
-  
-  .scroll-to-top-btn:hover {
-    transform: translateX(-50%) translateY(0) !important;
-    animation: none;
-  }
-  
-  .scroll-to-top-btn.pulse {
-    animation: none;
+
+  .home-link {
+    transition: none;
   }
 }
