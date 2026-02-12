@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import usePageTitle from '../../hooks/usePageTitle';
 import './OnlinePresence.css';
 import PageNavigation from '../PageNavigation/PageNavigation';
 
 export default function OnlinePresence() {
+    usePageTitle('Online Presence');
     const location = useLocation();
 
     const socialLinks = [

@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import usePageTitle from '../../hooks/usePageTitle';
 import './Privacy.css';
 
 export default function Privacy() {
+  usePageTitle('Privacy Policy');
   return (
     <div className="privacy-container">
       <div className="home-link-wrap">

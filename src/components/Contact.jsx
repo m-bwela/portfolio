@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import usePageTitle from '../hooks/usePageTitle';
 import PageNavigation from './PageNavigation/PageNavigation';
 
 export default function Contact() {
+    usePageTitle('Contact');
     const location = useLocation();
 
     const [status, setStatus] = useState('idle'); // idle | loading | success | error
@@ -41,15 +43,7 @@ export default function Contact() {
         }
     }
 
-    function handleFocus(e) {
-        e.target.style.background = '#2B2E4A';
-        e.target.style.color = '#fff';
-    }
-
-    function handleBlur(e) {
-        e.target.style.background = '';
-        e.target.style.color = '';
-    }
+    // Focus/blur handled via CSS :focus in main.css
 
     return (
         <>
@@ -79,9 +73,9 @@ export default function Contact() {
             </ul>
             <div className='contact-container'>
                 <form onSubmit={handleSubmit} className='contact-form'>
-                    <input type="text" name="name" placeholder="Your Name" onFocus={handleFocus} onBlur={handleBlur} required />
-                    <input type="email" name="email" placeholder="Your Email" onFocus={handleFocus} onBlur={handleBlur} required />
-                    <textarea name="message" placeholder="Your Message" onFocus={handleFocus} onBlur={handleBlur} required></textarea>
+                    <input type="text" name="name" placeholder="Your Name" required />
+                    <input type="email" name="email" placeholder="Your Email" required />
+                    <textarea name="message" placeholder="Your Message" required></textarea>
                     <button type="submit" disabled={status === 'loading'}>{status === 'loading' ? 'Sending...' : 'Send'}</button>
                     {status === 'success' && <p className='form-success' style={{ color: '#7c3aed', marginTop: '0.75rem' }}>Thanks — your message has been sent.</p>}
                     {status === 'error' && <p className='form-error' style={{ color: '#a259f7', marginTop: '0.75rem' }}>Something went wrong — please try again later.</p>}

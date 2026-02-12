@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import usePageTitle from '../../hooks/usePageTitle';
 import './Terms.css';
 
 export default function Terms() {
+  usePageTitle('Terms of Service');
   return (
     <div className="terms-container">
       <div className="home-link-wrap">

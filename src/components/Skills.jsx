@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from 'react-router-dom';
+import usePageTitle from '../hooks/usePageTitle';
 import PageNavigation from './PageNavigation/PageNavigation';
 
 const skillIcons = {
@@ -50,6 +51,7 @@ function SkillItem({ name }) {
 }
 
 export default function Skills() {
+    usePageTitle('Skills');
     const location = useLocation();
     return (
             <>

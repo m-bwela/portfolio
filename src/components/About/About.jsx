@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import usePageTitle from '../../hooks/usePageTitle';
 import './About.css';
 import profileImage from '../../assets/images/profile.jpg';
 import PageNavigation from '../PageNavigation/PageNavigation';
 
 export default function About() {
+    usePageTitle('About');
     const location = useLocation();
     const [isExpanded, setIsExpanded] = useState(false);
     

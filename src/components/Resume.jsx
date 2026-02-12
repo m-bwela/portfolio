@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import './Resume.css'; // We'll create this file
+import usePageTitle from '../hooks/usePageTitle';
+import './Resume.css';
+import resumePdf from '../assets/resume_template.pdf';
 import PageNavigation from './PageNavigation/PageNavigation';
 
 export default function Resume() {
+    usePageTitle('Resume');
     const location = useLocation();
     return (
         <>
@@ -63,7 +66,7 @@ export default function Resume() {
                         </div>
                         
                         <div className='resume-download'>
-                            <a href="/resume_template.pdf" className="btn" download>Download Full Resume</a>
+                            <a href={resumePdf} className="btn" download="Tye_Nzambu_Resume.pdf">Download Full Resume</a>
                         </div>
                     </div>
                 </div>

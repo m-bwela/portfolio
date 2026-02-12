@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import usePageTitle from '../../hooks/usePageTitle';
 import './Projects.css';
 import PageNavigation from '../PageNavigation/PageNavigation';
 
@@ -17,7 +18,7 @@ const projects = [
   {
     title: "Bookify",
     description: "A web Application to find and manage your book collection. Technologies used include; HTML5, CSS, Node.JS, Express.",
-    link: "https://your-blog-link.com"
+    link: "https://github.com/m-bwela"
   },
 
   {
@@ -28,6 +29,7 @@ const projects = [
 ];
 
 export default function Projects() {
+    usePageTitle('Projects');
     const location = useLocation();
   return (
     <>
@@ -40,7 +42,7 @@ export default function Projects() {
         <h2 className="section-title">Projects</h2>
         <div className="row">
           {projects.map((project, idx) => (
-            <div className="col-3" key={idx}>
+            <div className="col-lg-3 col-md-6 col-12 mb-4" key={idx}>
             <div className="card">
               <div className="card-body">
                 <h3 className="card-title">{project.title}</h3>

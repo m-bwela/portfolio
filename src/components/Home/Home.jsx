@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from "react-bootstrap";
+import usePageTitle from '../../hooks/usePageTitle';
 import Home2 from './Home2';
 import About from '../About/About';
 import Projects from '../Projects/Projects';
@@ -10,6 +11,7 @@ import Contact from '../Contact';
 import SideNav from '../SideNav/SideNav';
 
 export default function Home() {
+    usePageTitle(null); // default title
 
     const [isButton, setIsButton] = React.useState(false);
 
