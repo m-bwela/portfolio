@@ -6,6 +6,11 @@ import PageNavigation from '../PageNavigation/PageNavigation';
 
 const projects = [
   {
+    title: "Chat App",
+    description: "A Full-Stack web Application for conversations and friendly chats. Technologies used include; React, Tailwind, JavaScript, Socket.io, HTML5, Node.JS, Express",
+    link: "https://chat-app-sable-gamma-68.vercel.app"
+  }
+  {
     title: "Personal Express Tracker",
     description: "A web Application to track personal expenses. Technologies used include; React, CSS, JavaScript, HTML5, Material UI.",
     link: "https://expense-tracker-xi-ecru-46.vercel.app/"
