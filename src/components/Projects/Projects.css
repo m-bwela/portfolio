@@ -99,21 +99,71 @@
 }
 
 .card-body a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   color: #fff;
-  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
-  padding: 0.5rem 1.2rem;
-  border-radius: 0.7rem;
+  padding: 0.45rem 1rem;
+  border-radius: 0.6rem;
   font-weight: 500;
+  font-size: 0.9rem;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-  box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  border: 1.5px solid transparent;
 }
 
-.card-body a:hover {
+/* Live Demo button */
+.btn-demo {
+  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  box-shadow: 0 2px 8px rgba(0,123,255,0.15);
+}
+
+.btn-demo:hover {
   background: #fff;
   color: #007bff;
-  border: 1px solid #007bff;
+  border-color: #007bff;
+  transform: translateY(-1px);
+}
+
+/* GitHub Code button */
+.btn-github {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.3);
+  color: #e0d4ff;
+}
+
+.btn-github:hover {
+  background: #fff;
+  color: #22223b;
+  border-color: #22223b;
+  transform: translateY(-1px);
+}
+
+/* Tech tags */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.tech-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(0, 123, 255, 0.12);
+  color: #007bff;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Link row */
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
 }
 
 @media (max-width: 900px) {
@@ -141,10 +191,17 @@
     font-size: 0.98rem;
   }
   .card-body a {
-    font-size: 1.05rem;
-    padding: 0.7rem 1.5rem;
-    min-width: 120px;
+    font-size: 0.9rem;
+    padding: 0.55rem 1rem;
+    min-width: 100px;
     text-align: center;
+    justify-content: center;
     touch-action: manipulation;
+  }
+  .project-links {
+    flex-direction: row;
+  }
+  .tech-tag {
+    font-size: 0.68rem;
   }
 }

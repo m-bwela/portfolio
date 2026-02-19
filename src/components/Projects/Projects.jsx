@@ -7,29 +7,38 @@ import PageNavigation from '../PageNavigation/PageNavigation';
 const projects = [
   {
     title: "Chat App",
-    description: "A Full-Stack web Application for conversations and friendly chats. Technologies used include; React, Tailwind, JavaScript, Socket.io, HTML5, Node.JS, Express",
-    link: "https://chat-app-sable-gamma-68.vercel.app/"
+    description: "A Full-Stack real-time messaging application for conversations and friendly chats.",
+    tech: ["React", "Tailwind", "Socket.io", "Node.js", "Express"],
+    demo: "https://chat-app-sable-gamma-68.vercel.app/",
+    github: "https://github.com/m-bwela/chat-app"
   },
   {
-    title: "Personal Express Tracker",
-    description: "A web Application to track personal expenses. Technologies used include; React, CSS, JavaScript, HTML5, Material UI.",
-    link: "https://expense-tracker-xi-ecru-46.vercel.app/"
+    title: "Personal Expense Tracker",
+    description: "A web application to track and manage personal expenses with visual breakdowns.",
+    tech: ["React", "Material UI", "JavaScript", "CSS"],
+    demo: "https://expense-tracker-xi-ecru-46.vercel.app/",
+    github: "https://github.com/m-bwela/Expense-Tracker"
   },
   {
     title: "Keeper App",
-    description: "A web Application to keep track of notes. Technologies used include; HTML5, CSS, JavaScript, React.",
-    link: "https://keeper-app-six-mu.vercel.app/"
+    description: "A note-taking app inspired by Google Keep — create, edit and delete notes.",
+    tech: ["React", "JavaScript", "CSS", "HTML5"],
+    demo: "https://keeper-app-six-mu.vercel.app/",
+    github: "https://github.com/m-bwela/Keeper-App"
   },
   {
     title: "Bookify",
-    description: "A web Application to find and manage your book collection. Technologies used include; HTML5, CSS, Node.JS, Express.",
-    link: "https://github.com/m-bwela"
+    description: "A web application to find and manage your book collection with search and favorites.",
+    tech: ["Node.js", "Express", "HTML5", "CSS"],
+    demo: null,
+    github: "https://github.com/m-bwela/Bookify"
   },
-
   {
     title: "Todo App",
-    description: "A web Application to manage your tasks. Technologies used include; HTML5, CSS, JavaScript, React.",
-    link: "https://todo-list-project-eight-eta.vercel.app/"
+    description: "A clean task management app — add, complete, and delete your daily tasks.",
+    tech: ["React", "JavaScript", "CSS", "HTML5"],
+    demo: "https://todo-list-project-eight-eta.vercel.app/",
+    github: "https://github.com/m-bwela/Todo-list-project"
   }
 ];
 
@@ -52,9 +61,23 @@ export default function Projects() {
               <div className="card-body">
                 <h3 className="card-title">{project.title}</h3>
                 <p>{project.description}</p>
-                <a href={project.link} target="_blank" rel="noopener noreferrer">
-                  View Project
-                </a>
+                <div className="project-tech">
+                  {project.tech.map((t) => (
+                    <span key={t} className="tech-tag">{t}</span>
+                  ))}
+                </div>
+                <div className="project-links">
+                  {project.demo && (
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn-demo">
+                      <i className="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                  )}
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-github">
+                      <i className="fab fa-github"></i> Code
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           </div>
