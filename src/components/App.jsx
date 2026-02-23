@@ -44,8 +44,10 @@ export default function App() {
     <Router>
       <RouteScrollToTop />
       <ErrorBoundary>
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <div className="app">
           <Suspense fallback={<PageLoader />}>
+            <main id="main-content">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
@@ -58,6 +60,7 @@ export default function App() {
               <Route path="/privacy" element={<Privacy />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            </main>
           </Suspense>
           <Footer />
           <ScrollToTop />

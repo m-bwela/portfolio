@@ -37,20 +37,31 @@ export default function About() {
                 <img 
                     src={profileImage} 
                     alt="Tye Nzambu - Web Developer"
+                    loading="lazy"
+                    width="300"
+                    height="300"
                 />
             </div>
             <div className='about-content'>
                 <div className='about-accordion'>
-                    <div 
+                    <button 
+                        type="button"
                         className={`about-accordion-header ${isExpanded ? 'expanded' : ''}`}
                         onClick={toggleAccordion}
+                        aria-expanded={isExpanded}
+                        aria-controls="about-accordion-panel"
                     >
                         <h2>About Me ℹ️</h2>
-                        <div className='about-accordion-icon'>
+                        <div className='about-accordion-icon' aria-hidden="true">
                             {isExpanded ? '−' : '+'}
                         </div>
-                    </div>
-                    <div className={`about-accordion-content ${isExpanded ? 'expanded' : ''}`}>
+                    </button>
+                    <div
+                        id="about-accordion-panel"
+                        role="region"
+                        className={`about-accordion-content ${isExpanded ? 'expanded' : ''}`}
+                        aria-labelledby="about-accordion-toggle"
+                    >
                         <p className='about-description'>
                             Result-driven Web developer and knowledgeable computer science student with experience in building responsive, user-friendly software applications. My expertise includes using technologies such as React, Node.JS, and REST APIs. Seeking to leverage coding expertise in a fast-paced software development role. Excellent problem solving skills and a strong desire to learn and grow in the field.
                         </p>

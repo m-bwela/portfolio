@@ -8,12 +8,32 @@ export default function Contact() {
     const location = useLocation();
 
     const [status, setStatus] = useState('idle'); // idle | loading | success | error
+    const [errors, setErrors] = useState({});
+
+    function validate(formData) {
+        const errs = {};
+        const name = formData.get('name')?.trim();
+        const email = formData.get('email')?.trim();
+        const message = formData.get('message')?.trim();
+        if (!name || name.length < 2) errs.name = 'Please enter your name (at least 2 characters).';
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errs.email = 'Please enter a valid email address.';
+        if (!message || message.length < 10) errs.message = 'Please enter a message (at least 10 characters).';
+        return errs;
+    }
 
     async function handleSubmit(e) {
         e.preventDefault();
-        setStatus('loading');
         const form = e.target;
         const formData = new FormData(form);
+
+        // Honeypot check — bots will fill this hidden field
+        if (formData.get('_gotcha')) return;
+
+        const errs = validate(formData);
+        setErrors(errs);
+        if (Object.keys(errs).length > 0) return;
+
+        setStatus('loading');
 
         try {
             const res = await fetch('https://formspree.io/f/mayvldwp', {
@@ -72,10 +92,19 @@ export default function Contact() {
                 </li>
             </ul>
             <div className='contact-container'>
-                <form onSubmit={handleSubmit} className='contact-form'>
-                    <input type="text" name="name" placeholder="Your Name" required />
-                    <input type="email" name="email" placeholder="Your Email" required />
-                    <textarea name="message" placeholder="Your Message" required></textarea>
+                <form onSubmit={handleSubmit} className='contact-form' noValidate>
+                    {/* Honeypot field — hidden from humans, catches bots */}
+                    <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex="-1" autoComplete="off" />
+                    
+                    <input type="text" name="name" placeholder="Your Name" required aria-invalid={!!errors.name} />
+                    {errors.name && <p className="form-field-error" style={{ color: '#f87171', fontSize: '0.85rem', margin: '0.25rem 0 0.5rem' }}>{errors.name}</p>}
+                    
+                    <input type="email" name="email" placeholder="Your Email" required aria-invalid={!!errors.email} />
+                    {errors.email && <p className="form-field-error" style={{ color: '#f87171', fontSize: '0.85rem', margin: '0.25rem 0 0.5rem' }}>{errors.email}</p>}
+                    
+                    <textarea name="message" placeholder="Your Message" required aria-invalid={!!errors.message}></textarea>
+                    {errors.message && <p className="form-field-error" style={{ color: '#f87171', fontSize: '0.85rem', margin: '0.25rem 0 0.5rem' }}>{errors.message}</p>}
+                    
                     <button type="submit" disabled={status === 'loading'}>{status === 'loading' ? 'Sending...' : 'Send'}</button>
                     {status === 'success' && <p className='form-success' style={{ color: '#7c3aed', marginTop: '0.75rem' }}>Thanks — your message has been sent.</p>}
                     {status === 'error' && <p className='form-error' style={{ color: '#a259f7', marginTop: '0.75rem' }}>Something went wrong — please try again later.</p>}

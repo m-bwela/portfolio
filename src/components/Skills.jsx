@@ -9,15 +9,15 @@ const skillIcons = {
     JavaScript: { src: "https://simpleicons.org/icons/javascript.svg", color: "#c084fc" },
     React: { src: "https://simpleicons.org/icons/react.svg", color: "#9333ea" },
     Bootstrap: { src: "https://simpleicons.org/icons/bootstrap.svg", color: "#7c3aed" },
-    "Material UI": { src: "https://simpleicons.org/icons/materialui.svg", color: "#a259f7" },
+    "Material UI": { src: "https://simpleicons.org/icons/mui.svg", color: "#a259f7" },
     "Node.js": { src: "https://simpleicons.org/icons/nodedotjs.svg", color: "#c084fc" },
     Express: { src: "https://simpleicons.org/icons/express.svg", color: "#000000" },
     PostgreSQL: { src: "https://simpleicons.org/icons/postgresql.svg", color: "#7c3aed" },
-    "RESTful APIs": { src: "https://simpleicons.org/icons/api.svg", color: "#a259f7" },
+    "RESTful APIs": { src: "https://simpleicons.org/icons/fastapi.svg", color: "#a259f7" },
     MySQL: { src: "https://simpleicons.org/icons/mysql.svg", color: "#9333ea" },
     Git: { src: "https://simpleicons.org/icons/git.svg", color: "#c084fc" },
     Docker: { src: "https://simpleicons.org/icons/docker.svg", color: "#7c3aed" },
-    AWS: { src: "https://simpleicons.org/icons/amazonaws.svg", color: "#a259f7" },
+    AWS: { src: "https://simpleicons.org/icons/amazonwebservices.svg", color: "#a259f7" },
     Github: { src: "https://simpleicons.org/icons/github.svg", color: "#000000" },
     Postman: { src: "https://simpleicons.org/icons/postman.svg", color: "#9333ea" },
     "VS Code": { src: "https://simpleicons.org/icons/visualstudiocode.svg", color: "#c084fc" },
@@ -29,11 +29,14 @@ const skillIcons = {
 
 function SkillItem({ name }) {
     const icon = skillIcons[name];
+    const [imgError, setImgError] = React.useState(false);
     return (
         <li style={{ display: 'flex', alignItems: 'center', marginBottom: '0.5rem' }}>
             {icon && (
                 <span style={{
-                    display: 'inline-block',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     width: 32,
                     height: 32,
                     background: icon.color,
@@ -41,8 +44,20 @@ function SkillItem({ name }) {
                     marginRight: 10,
                     boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
                     overflow: 'hidden',
+                    fontSize: 16,
+                    color: '#fff',
                 }}>
-                    <img src={icon.src} alt={name + ' logo'} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 4 }} />
+                    {imgError ? (
+                        name.charAt(0)
+                    ) : (
+                        <img
+                            src={icon.src}
+                            alt={name + ' logo'}
+                            style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 4 }}
+                            onError={() => setImgError(true)}
+                            loading="lazy"
+                        />
+                    )}
                 </span>
             )}
             <span style={{ fontWeight: 500 }}>{name}</span>

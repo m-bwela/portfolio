@@ -1,3 +1,27 @@
+/* Skip to main content link (accessibility) */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 10000;
+  padding: 0.75rem 1.5rem;
+  background: #7c3aed;
+  color: #fff;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus-visible styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 2px;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* Accounts for fixed header */

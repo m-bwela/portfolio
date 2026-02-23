@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Container, Row, Col } from "react-bootstrap";
 import usePageTitle from '../../hooks/usePageTitle';
 import Home2 from './Home2';
@@ -13,42 +13,38 @@ import SideNav from '../SideNav/SideNav';
 export default function Home() {
     usePageTitle(null); // default title
 
-    const [isButton, setIsButton] = React.useState(false);
-
-    const handleButtonClick = () => {
-        setIsButton(!isButton);
-    };
-
     return (
 
         <>
         <SideNav />
         <header className='header'>
+            <nav aria-label="Main navigation">
             <ul className="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style={{ "--bs-nav-link-color": "var(--bs-white)", "--bs-nav-pills-link-active-color": "var(--bs-primary)", "--bs-nav-pills-link-active-bg": "var(--bs-white)" }}>
                 <li className="nav-item" role="presentation">
-                <Link className="nav-link active rounded-5" id="home-tab2" to="/">Home 🏠</Link>
+                <NavLink className={({ isActive }) => `nav-link rounded-5${isActive ? ' active' : ''}`} id="home-tab2" to="/" end>Home 🏠</NavLink>
                 </li>
                 <li className="nav-item" role="presentation">
-                <Link className="nav-link rounded-5" id="about-tab2" to="/about">About ℹ️</Link>
+                <NavLink className={({ isActive }) => `nav-link rounded-5${isActive ? ' active' : ''}`} id="about-tab2" to="/about">About ℹ️</NavLink>
                 </li>
                 <li className="nav-item" role="presentation">
-                <Link className="nav-link rounded-5" id="projects-tab2" to="/projects">Projects 💼</Link>
+                <NavLink className={({ isActive }) => `nav-link rounded-5${isActive ? ' active' : ''}`} id="projects-tab2" to="/projects">Projects 💼</NavLink>
                 </li>
                 <li className="nav-item" role="presentation">
-                <Link className="nav-link rounded-5" id="skills-tab2" to="/skills">Skills 🛠️</Link>
+                <NavLink className={({ isActive }) => `nav-link rounded-5${isActive ? ' active' : ''}`} id="skills-tab2" to="/skills">Skills 🛠️</NavLink>
                 </li>
                 <li className="nav-item" role="presentation">
-                <Link className="nav-link rounded-5" id="resume-tab2" to="/resume">Resume 📄</Link>
+                <NavLink className={({ isActive }) => `nav-link rounded-5${isActive ? ' active' : ''}`} id="resume-tab2" to="/resume">Resume 📄</NavLink>
                 </li>
                 <li className="nav-item" role="presentation">
-                <Link className="nav-link rounded-5" id="contact-tab2" to="/contact">Contact 📞</Link>
+                <NavLink className={({ isActive }) => `nav-link rounded-5${isActive ? ' active' : ''}`} id="contact-tab2" to="/contact">Contact 📞</NavLink>
                 </li>
             </ul>
+            </nav>
         </header>
 
         <section>
       <Container fluid className="home-section" id="home">
-        <Container className="home-content" id="home">
+        <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading">
@@ -69,7 +65,7 @@ export default function Home() {
                   <span className="stat-label">Years Experience</span>
                 </div>
                 <div className="stat">
-                  <span className="stat-number">12</span>
+                  <span className="stat-number">5+</span>
                   <span className="stat-label">Projects</span>
                 </div>
                 <div className="stat">

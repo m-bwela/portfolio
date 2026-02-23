@@ -127,8 +127,13 @@ export default function Chatbot() {
               <div 
                 key={index} 
                 className={`message ${message.sender}`}
-                dangerouslySetInnerHTML={{ __html: message.text }}
-              />
+              >
+                {message.sender === 'bot' ? (
+                  <span dangerouslySetInnerHTML={{ __html: message.text }} />
+                ) : (
+                  message.text
+                )}
+              </div>
             ))}
             <div ref={messagesEndRef} />
           </div>

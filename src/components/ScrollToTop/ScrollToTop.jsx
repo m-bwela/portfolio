@@ -13,7 +13,10 @@ export default function ScrollToTop() {
   const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
   useEffect(() => {
-    const check = () => {
+    let ticking = false;
+    let idleTimer = null;
+
+    const update = () => {
       const scrollTop = Math.max(
         window.pageYOffset || 0,
         document.documentElement.scrollTop || 0,
@@ -29,11 +32,31 @@ export default function ScrollToTop() {
 
       setPercent(pct);
       setVisible(scrollTop > 300);
-      rafRef.current = requestAnimationFrame(check);
+      ticking = false;
     };
-    rafRef.current = requestAnimationFrame(check);
+
+    const onScroll = () => {
+      if (!ticking) {
+        rafRef.current = requestAnimationFrame(update);
+        ticking = true;
+      }
+      // Reset idle timer — keep listening for a bit after scrolling stops
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(update, 150);
+    };
+
+    // Listen on both window and body (body is the scroll container due to CSS)
+    window.addEventListener('scroll', onScroll, { passive: true });
+    document.body.addEventListener('scroll', onScroll, { passive: true });
+
+    // Initial check
+    update();
+
     return () => {
+      window.removeEventListener('scroll', onScroll);
+      document.body.removeEventListener('scroll', onScroll);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      clearTimeout(idleTimer);
     };
   }, []);
 

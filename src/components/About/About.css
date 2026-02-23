@@ -138,6 +138,12 @@
   border-radius: 0.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  /* Button reset for accessibility */
+  border: none;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
 }
 
 .about-accordion-header:hover {
