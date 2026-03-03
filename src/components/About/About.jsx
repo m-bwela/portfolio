@@ -28,7 +28,7 @@ export default function About() {
                         Hello, I'm Tye Nzambu
                     </div>
                     <div className='about-image-subtitle'>
-                        A passionate web developer
+                        A passionate AI-augmented Full Stack web developer
                     </div>
                     <div className='about-image-description'>
                         I create responsive and user-friendly web applications.

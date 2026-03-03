@@ -122,19 +122,23 @@
 }
 
 .social-card:nth-child(2) {
-  animation-delay: -4s;
+  animation-delay: -2.667s;
 }
 
 .social-card:nth-child(3) {
-  animation-delay: -8s;
+  animation-delay: -5.333s;
 }
 
 .social-card:nth-child(4) {
-  animation-delay: -12s;
+  animation-delay: -8s;
 }
 
 .social-card:nth-child(5) {
-  animation-delay: -2s;
+  animation-delay: -10.667s;
+}
+
+.social-card:nth-child(6) {
+  animation-delay: -13.333s;
 }
 
 .social-card::before {

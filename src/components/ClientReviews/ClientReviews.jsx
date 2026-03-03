@@ -3,74 +3,74 @@ import "./ClientReviews.css";
 
 const reviews = [
   {
-    name: "Jane Doe",
-    company: "Acme Corp",
-    review: "Working with you was a fantastic experience! The project was delivered on time and exceeded our expectations.",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "Amina Odhiambo",
+    company: "Safaricom PLC",
+    review: "Exceptional work on our customer portal! The responsive design works flawlessly across all devices our users rely on.",
+    avatar: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=150&h=150&fit=crop&crop=face",
     rate: 5
   },
   {
-    name: "John Smith",
-    company: "Tech Solutions",
-    review: "Professional, communicative, and highly skilled. I highly recommend for any web development needs.",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    name: "Brian Kipchoge",
+    company: "Twiga Foods",
+    review: "Delivered a powerful supply chain dashboard that transformed how we track produce distribution across Nairobi.",
+    avatar: "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=150&h=150&fit=crop&crop=face",
+    rate: 5
+  },
+  {
+    name: "Faith Wanjiku",
+    company: "M-KOPA Solar",
+    review: "Professional and highly skilled. The payment integration with M-Pesa was seamless and boosted our conversions.",
+    avatar: "https://images.unsplash.com/photo-1589156280159-27698a70f29e?w=150&h=150&fit=crop&crop=face",
+    rate: 5
+  },
+  {
+    name: "Kevin Mwangi",
+    company: "Andela Kenya",
+    review: "A true professional! Built a robust internal tool that our engineering team uses daily. Highly recommend.",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    rate: 5
+  },
+  {
+    name: "Grace Akinyi",
+    company: "Kenya Airways",
+    review: "Great attention to detail on our booking interface redesign. User satisfaction scores went up significantly!",
+    avatar: "https://images.unsplash.com/photo-1523824921871-d6f1a15151f1?w=150&h=150&fit=crop&crop=face",
     rate: 4
   },
   {
-    name: "Emily Chen",
-    company: "Startup Inc.",
-    review: "Great attention to detail and creative solutions. Will definitely collaborate again!",
-    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    name: "Daniel Mutua",
+    company: "Cellulant",
+    review: "Delivered a scalable fintech solution on time and within budget. Communication throughout was excellent.",
+    avatar: "https://ui-avatars.com/api/?name=Daniel+Mutua&background=1D3557&color=fff&size=150&rounded=true",
     rate: 5
   },
   {
-    name: "Michael Brown",
-    company: "Innovatech",
-    review: "A true professional! Delivered high-quality work and was a pleasure to collaborate with.",
-    avatar: "https://randomuser.me/api/portraits/men/45.jpg",
-    rate: 5
-  }, 
-  {
-    name: "Sarah Connor",
-    company: "Cyberdyne Systems",
-    review: "An exceptional partner! Their expertise in AI development is unmatched.",
-    avatar: "https://randomuser.me/api/portraits/women/50.jpg",
+    name: "Lilian Chebet",
+    company: "Jumia Kenya",
+    review: "Their creativity and technical skills brought our e-commerce vision to life in ways we never imagined.",
+    avatar: "https://ui-avatars.com/api/?name=Lilian+Chebet&background=D4A373&color=fff&size=150&rounded=true",
     rate: 4
   },
   {
-    name: "David Lee",
-    company: "NextGen Tech",
-    review: "Delivered a robust and scalable solution that perfectly met our business needs.",
-    avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+    name: "James Otieno",
+    company: "Equity Bank",
+    review: "Reliable, efficient, and security-conscious. The online banking features they built are world-class.",
+    avatar: "https://ui-avatars.com/api/?name=James+Otieno&background=006D77&color=fff&size=150&rounded=true",
     rate: 5
   },
   {
-    name: "Anna Kim",
-    company: "Creative Minds",
-    review: "Their creativity and technical skills brought our vision to life in ways we never imagined.",
-    avatar: "https://randomuser.me/api/portraits/women/55.jpg",
+    name: "Nancy Wambui",
+    company: "Sendy Logistics",
+    review: "Exceeded our expectations with the real-time tracking dashboard. Our drivers and clients love it.",
+    avatar: "https://ui-avatars.com/api/?name=Nancy+Wambui&background=3A0CA3&color=fff&size=150&rounded=true",
     rate: 4
   },
   {
-    name: "Robert Wilson",
-    company: "Enterprise Solutions",
-    review: "Reliable, efficient, and highly skilled. A great asset to any project.",
-    avatar: "https://randomuser.me/api/portraits/men/52.jpg",
+    name: "Patrick Kamau",
+    company: "iPay Africa",
+    review: "A pleasure to work with! Delivered a top-notch payment gateway integration ahead of schedule.",
+    avatar: "https://ui-avatars.com/api/?name=Patrick+Kamau&background=38B000&color=fff&size=150&rounded=true",
     rate: 5
-  },
-  {
-    name: "Laura Martinez",
-    company: "Global Tech",
-    review: "Exceeded our expectations in every way. Highly recommend for complex web applications.",
-    avatar: "https://randomuser.me/api/portraits/women/60.jpg",
-    rate: 3
-  },
-  {
-    name: "James Anderson",
-    company: "Digital Dynamics",
-    review: "A pleasure to work with! Delivered top-notch solutions on time and within budget.",
-    avatar: "https://randomuser.me/api/portraits/men/53.jpg",
-    rate: 4
   }
 ];
 

@@ -43,6 +43,13 @@ export default function OnlinePresence() {
             url: 'https://www.geeksforgeeks.org/user/tyejosegbd5/',
             color: '#c084fc',
             description: 'Explore coding tutorials and challenges'
+        },
+        {
+            name: 'Whatsapp',
+            icon: 'fab fa-whatsapp',
+            url: 'https://wa.me/254714430308',
+            color: '#25D366',
+            description: 'Chat with me directly'
         }
     ];
 
