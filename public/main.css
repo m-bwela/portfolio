@@ -446,6 +446,7 @@ html {
   }
   .home-section {
     padding: 2rem 0;
+    overflow-x: visible;
   }
   .heading, .heading-name {
     font-size: 1.5rem;
