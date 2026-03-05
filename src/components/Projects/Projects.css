@@ -106,8 +106,6 @@
   font-size: 3rem;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
-  box-shadow: 0 8px 32px rgba(0,123,255,0.13);
-}
 
 .card-body {
   padding: 1.5rem 1.2rem;
