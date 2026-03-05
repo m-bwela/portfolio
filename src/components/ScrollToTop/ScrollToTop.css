@@ -1,7 +1,7 @@
 /* CSS Variables for consistent styling */
 :root {
-  --primary: #007bff;
-  --accent: #00c6ff;
+  --primary: #a259f7;
+  --accent: #c084fc;
   --white: #ffffff;
   --shadow-sm: 0 2px 8px rgba(0,123,255,0.10);
   --shadow-md: 0 4px 16px rgba(0,123,255,0.18);

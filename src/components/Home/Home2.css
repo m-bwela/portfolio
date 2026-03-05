@@ -3,7 +3,7 @@
   display: inline-block;
   margin: 1.5rem 0 1.2rem 1.2rem;
   padding: 0.6rem 1.4rem;
-  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  background: linear-gradient(90deg, #a259f7 0%, #c084fc 100%);
   color: #fff;
   font-weight: 600;
   font-size: 1.08rem;
@@ -18,9 +18,9 @@
 
 .home-link:hover {
   background: #fff;
-  color: #007bff;
+  color: #a259f7;
   box-shadow: 0 4px 16px rgba(0,123,255,0.18);
-  border: 1.5px solid #007bff;
+  border: 1.5px solid #a259f7;
   transform: translateY(-2px) scale(1.04);
   text-decoration: underline;
 }
@@ -46,7 +46,7 @@
 }
 
 .Typewriter__cursor {
-  color: #00c6ff;
+  color: #c084fc;
   font-size: 2.2rem;
   animation: blink 1s infinite;
 }

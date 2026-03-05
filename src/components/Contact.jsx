@@ -69,7 +69,7 @@ export default function Contact() {
             label: 'Email',
             value: 'tyejoseph732@gmail.com',
             href: 'mailto:tyejoseph732@gmail.com',
-            color: '#4cc9f0'
+            color: '#c084fc'
         },
         {
             icon: '📱',

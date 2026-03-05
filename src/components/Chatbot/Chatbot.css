@@ -11,7 +11,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%);
+  background: linear-gradient(135deg, #c084fc 0%, #7c3aed 100%);
   color: white;
   border: none;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -30,7 +30,7 @@
 }
 
 .chatbot-toggle.open {
-  background: linear-gradient(135deg, #f72585 0%, #4361ee 100%);
+  background: linear-gradient(135deg, #f72585 0%, #7c3aed 100%);
 }
 
 .chatbot-icon {
@@ -148,7 +148,7 @@
 }
 
 .message.bot {
-  background: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%);
+  background: linear-gradient(135deg, #c084fc 0%, #7c3aed 100%);
   color: white;
   align-self: flex-start;
   border-bottom-left-radius: 5px;
@@ -205,7 +205,7 @@
 }
 
 .send-button {
-  background: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%);
+  background: linear-gradient(135deg, #c084fc 0%, #7c3aed 100%);
   color: white;
   border: none;
   border-radius: 50%;
@@ -273,7 +273,7 @@
 
 .quick-reply-btn {
   background: rgba(76, 201, 240, 0.12);
-  color: #4cc9f0;
+  color: #c084fc;
   border: 1px solid rgba(76, 201, 240, 0.3);
   border-radius: 16px;
   padding: 5px 12px;
@@ -285,7 +285,7 @@
 
 .quick-reply-btn:hover {
   background: rgba(76, 201, 240, 0.25);
-  border-color: #4cc9f0;
+  border-color: #c084fc;
   transform: translateY(-1px);
 }
 
@@ -319,7 +319,7 @@
 
 .quick-reply-chip:hover {
   background: rgba(76, 201, 240, 0.15);
-  color: #4cc9f0;
+  color: #c084fc;
   border-color: rgba(76, 201, 240, 0.3);
 }
 

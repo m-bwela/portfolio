@@ -8,7 +8,7 @@ import PageNavigation from '../PageNavigation/PageNavigation';
 export default function About() {
     usePageTitle('About');
     const location = useLocation();
-    const [isExpanded, setIsExpanded] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(true);
     
     const toggleAccordion = () => {
         setIsExpanded(!isExpanded);

@@ -4,26 +4,26 @@ import usePageTitle from '../hooks/usePageTitle';
 import PageNavigation from './PageNavigation/PageNavigation';
 
 const skillIcons = {
-    HTML: { src: "https://simpleicons.org/icons/html5.svg", color: "#7c3aed" },
-    CSS: { src: "https://simpleicons.org/icons/css3.svg", color: "#a259f7" },
-    JavaScript: { src: "https://simpleicons.org/icons/javascript.svg", color: "#c084fc" },
-    React: { src: "https://simpleicons.org/icons/react.svg", color: "#9333ea" },
-    Bootstrap: { src: "https://simpleicons.org/icons/bootstrap.svg", color: "#7c3aed" },
-    "Material UI": { src: "https://simpleicons.org/icons/mui.svg", color: "#a259f7" },
-    "Node.js": { src: "https://simpleicons.org/icons/nodedotjs.svg", color: "#c084fc" },
+    HTML: { src: "https://simpleicons.org/icons/html5.svg", color: "#E34F26" },
+    CSS: { src: "https://simpleicons.org/icons/css3.svg", color: "#1572B6" },
+    JavaScript: { src: "https://simpleicons.org/icons/javascript.svg", color: "#F7DF1E" },
+    React: { src: "https://simpleicons.org/icons/react.svg", color: "#61DAFB" },
+    Bootstrap: { src: "https://simpleicons.org/icons/bootstrap.svg", color: "#7952B3" },
+    "Material UI": { src: "https://simpleicons.org/icons/mui.svg", color: "#007FFF" },
+    "Node.js": { src: "https://simpleicons.org/icons/nodedotjs.svg", color: "#339933" },
     Express: { src: "https://simpleicons.org/icons/express.svg", color: "#000000" },
-    PostgreSQL: { src: "https://simpleicons.org/icons/postgresql.svg", color: "#7c3aed" },
-    "RESTful APIs": { src: "https://simpleicons.org/icons/fastapi.svg", color: "#a259f7" },
-    MySQL: { src: "https://simpleicons.org/icons/mysql.svg", color: "#9333ea" },
-    Git: { src: "https://simpleicons.org/icons/git.svg", color: "#c084fc" },
-    Docker: { src: "https://simpleicons.org/icons/docker.svg", color: "#7c3aed" },
-    AWS: { src: "https://simpleicons.org/icons/amazonwebservices.svg", color: "#a259f7" },
-    Github: { src: "https://simpleicons.org/icons/github.svg", color: "#000000" },
-    Postman: { src: "https://simpleicons.org/icons/postman.svg", color: "#9333ea" },
-    "VS Code": { src: "https://simpleicons.org/icons/visualstudiocode.svg", color: "#c084fc" },
-    TailwindCSS: { src: "https://simpleicons.org/icons/tailwindcss.svg", color: "#7c3aed" },
-    SocketIO: { src: "https://simpleicons.org/icons/socketdotio.svg", color: "#000000" },
-    MongoDB: { src: "https://simpleicons.org/icons/mongodb.svg", color: "#a259f7" },
+    PostgreSQL: { src: "https://simpleicons.org/icons/postgresql.svg", color: "#4169E1" },
+    "RESTful APIs": { src: "https://simpleicons.org/icons/fastapi.svg", color: "#009688" },
+    MySQL: { src: "https://simpleicons.org/icons/mysql.svg", color: "#4479A1" },
+    Git: { src: "https://simpleicons.org/icons/git.svg", color: "#F05032" },
+    Docker: { src: "https://simpleicons.org/icons/docker.svg", color: "#2496ED" },
+    AWS: { src: "https://simpleicons.org/icons/amazonwebservices.svg", color: "#FF9900" },
+    Github: { src: "https://simpleicons.org/icons/github.svg", color: "#181717" },
+    Postman: { src: "https://simpleicons.org/icons/postman.svg", color: "#FF6C37" },
+    "VS Code": { src: "https://simpleicons.org/icons/visualstudiocode.svg", color: "#007ACC" },
+    TailwindCSS: { src: "https://simpleicons.org/icons/tailwindcss.svg", color: "#06B6D4" },
+    SocketIO: { src: "https://simpleicons.org/icons/socketdotio.svg", color: "#010101" },
+    MongoDB: { src: "https://simpleicons.org/icons/mongodb.svg", color: "#47A248" },
     Vercel: { src: "https://simpleicons.org/icons/vercel.svg", color: "#000000" },
 };
 
@@ -79,7 +79,7 @@ export default function Skills() {
                 <h2 className="section-title text-center mb-4">My Skills</h2>
                 <div className="row">
                     <div className="col-md-4">
-                        <h3>Frontend Development</h3>
+                        <h3 style={{ color: '#c084fc', fontWeight: 700, marginBottom: '1rem' }}>Frontend Development</h3>
                                                 <ul>
                                                     {['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'Material UI', 'TailwindCSS'].map(skill => (
                                                         <SkillItem key={skill} name={skill} />
@@ -87,7 +87,7 @@ export default function Skills() {
                                                 </ul>
                     </div>
                     <div className="col-md-4">
-                        <h3>Backend Development</h3>
+                        <h3 style={{ color: '#c084fc', fontWeight: 700, marginBottom: '1rem' }}>Backend Development</h3>
                                                 <ul>
                                                     {['Node.js', 'Express', 'PostgreSQL', 'RESTful APIs', 'MySQL', 'MongoDB'].map(skill => (
                                                         <SkillItem key={skill} name={skill} />
@@ -95,7 +95,7 @@ export default function Skills() {
                                                 </ul>
                     </div>
                     <div className="col-md-4">
-                        <h3>Tools & Technologies</h3>
+                        <h3 style={{ color: '#c084fc', fontWeight: 700, marginBottom: '1rem' }}>Tools & Technologies</h3>
                                                 <ul>
                                                     {['Git', 'Docker', 'AWS', 'Github', 'Postman', 'VS Code', 'SocketIO', 'Vercel'].map(skill => (
                                                         <SkillItem key={skill} name={skill} />

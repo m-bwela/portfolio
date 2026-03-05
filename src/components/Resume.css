@@ -18,7 +18,7 @@
   justify-content: center;
   gap: 0.4rem;
   padding: 0.6rem 1.2rem;
-  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  background: linear-gradient(90deg, #a259f7 0%, #c084fc 100%);
   color: #fff;
   font-weight: 600;
   font-size: 1.02rem;
@@ -33,9 +33,9 @@
 
 .home-link:hover {
   background: #fff;
-  color: #007bff;
+  color: #a259f7;
   box-shadow: 0 4px 16px rgba(0,123,255,0.18);
-  border: 1.5px solid #007bff;
+  border: 1.5px solid #a259f7;
   transform: translateY(-2px) scale(1.03);
   text-decoration: none;
 }
@@ -142,7 +142,7 @@
 
 .resume-section h3 {
   font-size: 1.8rem;
-  color: #4cc9f0;
+  color: #c084fc;
   margin-bottom: 1.2rem;
   position: relative;
 }
@@ -170,7 +170,7 @@
 
 .resume-item h5 {
   font-size: 0.9rem;
-  color: #4361ee;
+  color: #7c3aed;
   margin-bottom: 1rem;
   font-weight: 500;
 }
@@ -208,7 +208,7 @@
 }
 
 .resume-download .btn {
-  background: linear-gradient(90deg, #4cc9f0 0%, #4361ee 100%);
+  background: linear-gradient(90deg, #c084fc 0%, #7c3aed 100%);
   color: #fff;
   font-weight: 600;
   padding: 0.8rem 2.5rem;
@@ -227,7 +227,7 @@
 .resume-download .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(76,201,240,0.4);
-  background: linear-gradient(90deg, #4361ee 0%, #3a0ca3 100%);
+  background: linear-gradient(90deg, #7c3aed 0%, #3a0ca3 100%);
 }
 
 .resume-download .btn:active {
@@ -260,4 +260,146 @@
     padding: 0.7rem 1.8rem;
     font-size: 1rem;
   }
+}
+
+/* Email Popup Overlay */
+.email-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.email-popup {
+  background: linear-gradient(135deg, #1a0025 0%, #0d0d1a 100%);
+  border: 1px solid rgba(162, 89, 247, 0.3);
+  border-radius: 1.2rem;
+  padding: 2.5rem 2rem;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(162, 89, 247, 0.1);
+  animation: popUp 0.3s ease;
+}
+
+@keyframes popUp {
+  from { opacity: 0; transform: scale(0.9) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.popup-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: rgba(209, 196, 233, 0.5);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 0.3rem;
+}
+
+.popup-close:hover {
+  color: #f3f0ff;
+}
+
+.popup-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.email-popup h3 {
+  color: #c084fc;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.email-popup p {
+  color: #d1c4e9;
+  font-size: 0.9rem;
+  margin: 0 0 1.2rem;
+  line-height: 1.5;
+}
+
+.popup-input {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(162, 89, 247, 0.25);
+  border-radius: 0.6rem;
+  color: #f3f0ff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.popup-input:focus {
+  border-color: #a259f7;
+  box-shadow: 0 0 0 3px rgba(162, 89, 247, 0.15);
+}
+
+.popup-input::placeholder {
+  color: rgba(209, 196, 233, 0.4);
+}
+
+.popup-submit {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(90deg, #a259f7 0%, #7c3aed 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.popup-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(162, 89, 247, 0.35);
+}
+
+.popup-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.popup-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.popup-success p {
+  margin: 0;
+}
+
+.popup-error {
+  color: #fbbf24;
+  font-size: 0.82rem;
+  text-align: center;
+  margin-top: 0.8rem;
+  line-height: 1.5;
 }

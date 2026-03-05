@@ -20,7 +20,7 @@
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 1.5rem;
-  background: linear-gradient(90deg, var(--primary, #007bff) 0%, var(--accent, #00c6ff) 100%);
+  background: linear-gradient(90deg, var(--primary, #a259f7) 0%, var(--accent, #c084fc) 100%);
   color: white;
   text-decoration: none;
   border-radius: 12px;
@@ -32,8 +32,8 @@
 
 .page-nav-btn:hover {
   background: white;
-  color: var(--primary, #007bff);
-  border-color: var(--primary, #007bff);
+  color: var(--primary, #a259f7);
+  border-color: var(--primary, #a259f7);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 123, 255, 0.3);
 }

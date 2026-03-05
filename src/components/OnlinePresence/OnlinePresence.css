@@ -12,7 +12,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.7rem 1.6rem;
-  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  background: linear-gradient(90deg, #a259f7 0%, #c084fc 100%);
   color: #fff;
   font-weight: 600;
   font-size: 1.08rem;
@@ -26,9 +26,9 @@
 
 .home-link:hover {
   background: #fff;
-  color: #007bff;
+  color: #a259f7;
   box-shadow: 0 4px 16px rgba(0,123,255,0.18);
-  border-color: #007bff;
+  border-color: #a259f7;
   transform: translateY(-2px);
 }
 
@@ -46,7 +46,7 @@
 .section-title {
   text-align: center;
   font-size: 2.5rem;
-  color: #4cc9f0;
+  color: #c084fc;
   margin-bottom: 1rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -188,7 +188,7 @@
   align-items: center;
   justify-content: center;
   font-size: 1.8rem;
-  color: #4cc9f0;
+  color: #c084fc;
   transition: all 0.4s ease;
 }
 
@@ -212,7 +212,7 @@
 .visit-link {
   display: inline-block;
   font-size: 0.85rem;
-  color: #4cc9f0;
+  color: #c084fc;
   font-weight: 600;
   transition: all 0.3s ease;
   margin-top: 0.3rem;

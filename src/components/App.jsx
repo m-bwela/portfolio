@@ -17,6 +17,7 @@ const OnlinePresence = lazy(() => import("./OnlinePresence/OnlinePresence"));
 const Terms = lazy(() => import("./Terms/Terms"));
 const Privacy = lazy(() => import("./Privacy/Privacy"));
 const NotFound = lazy(() => import("./NotFound/NotFound"));
+const Blog = lazy(() => import("./Blog/Blog"));
 
 function PageLoader() {
   return (
@@ -58,6 +59,7 @@ export default function App() {
               <Route path="/online-presence" element={<OnlinePresence />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/privacy" element={<Privacy />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             </main>

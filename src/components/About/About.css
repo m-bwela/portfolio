@@ -11,7 +11,7 @@
   justify-content: center;
   gap: 0.4rem;
   padding: 0.6rem 1.2rem;
-  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  background: linear-gradient(90deg, #a259f7 0%, #c084fc 100%);
   color: #fff;
   font-weight: 600;
   font-size: 1.02rem;
@@ -26,9 +26,9 @@
 
 .home-link:hover {
   background: #fff;
-  color: #007bff;
+  color: #a259f7;
   box-shadow: 0 4px 16px rgba(0,123,255,0.18);
-  border: 1.5px solid #007bff;
+  border: 1.5px solid #a259f7;
   transform: translateY(-2px) scale(1.03);
   text-decoration: none;
 }
@@ -77,7 +77,7 @@
   bottom: -6px;
   border-radius: 50%;
   background: conic-gradient(
-    #007bff, #00c6ff, #4cc9f0, #a855f7, #f472b6, #007bff
+    #7c3aed, #a259f7, #c084fc, #a855f7, #9333ea, #7c3aed
   );
   animation: rotateFrame 4s linear infinite;
   z-index: 0;
@@ -156,7 +156,7 @@
 
 .about-image-subtitle {
   font-size: 0.95rem;
-  color: #4cc9f0;
+  color: #c084fc;
   font-weight: 500;
   margin-bottom: 0.15rem;
   text-shadow: 0 1px 4px rgba(0,0,0,0.4);
@@ -213,7 +213,7 @@
 
 .about-accordion-header h2 {
   font-size: 1.8rem;
-  color: #4cc9f0;
+  color: #c084fc;
   font-weight: 700;
   margin: 0;
   letter-spacing: 1px;
@@ -222,7 +222,7 @@
 .about-accordion-icon {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #4cc9f0;
+  color: #c084fc;
   transition: transform 0.3s ease;
   display: flex;
   align-items: center;
@@ -352,17 +352,17 @@
 }
 
 .about-link {
-  color: #007bff;
+  color: #a259f7;
   font-weight: 600;
   text-decoration: none;
-  border-bottom: 2px solid #00c6ff;
+  border-bottom: 2px solid #c084fc;
   transition: color 0.2s, border-bottom 0.2s;
   padding-bottom: 2px;
 }
 
 .about-link:hover {
-  color: #00c6ff;
-  border-bottom: 2px solid #007bff;
+  color: #c084fc;
+  border-bottom: 2px solid #a259f7;
   text-decoration: underline;
 }
 
