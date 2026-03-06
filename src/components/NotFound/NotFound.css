@@ -5,10 +5,63 @@
   justify-content: center;
   text-align: center;
   padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating particles */
+.not-found-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(192, 132, 252, 0.5);
+  animation: float 6s ease-in-out infinite;
+}
+
+.particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; animation-duration: 5s; }
+.particle:nth-child(2) { left: 25%; top: 70%; animation-delay: 1s; animation-duration: 7s; width: 8px; height: 8px; }
+.particle:nth-child(3) { left: 60%; top: 15%; animation-delay: 2s; animation-duration: 6s; }
+.particle:nth-child(4) { left: 80%; top: 55%; animation-delay: 0.5s; animation-duration: 8s; width: 5px; height: 5px; }
+.particle:nth-child(5) { left: 45%; top: 80%; animation-delay: 3s; animation-duration: 5.5s; width: 10px; height: 10px; background: rgba(124, 58, 237, 0.4); }
+.particle:nth-child(6) { left: 70%; top: 35%; animation-delay: 1.5s; animation-duration: 6.5s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+  50% { transform: translateY(-30px) scale(1.3); opacity: 1; }
 }
 
 .not-found-content {
-  max-width: 480px;
+  max-width: 520px;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Floating astronaut */
+.not-found-astronaut {
+  font-size: 3.5rem;
+  animation: drift 4s ease-in-out infinite;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(8px, -12px) rotate(5deg); }
+  50% { transform: translate(-5px, -20px) rotate(-3deg); }
+  75% { transform: translate(10px, -8px) rotate(4deg); }
 }
 
 .not-found-code {
@@ -20,20 +73,64 @@
   background-clip: text;
   line-height: 1;
   margin-bottom: 0.5rem;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(124, 58, 237, 0.3)); }
+  50% { filter: drop-shadow(0 0 20px rgba(192, 132, 252, 0.6)); }
 }
 
 .not-found-title {
   font-size: 1.8rem;
   font-weight: 600;
   color: #e0d4ff;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
 }
 
 .not-found-text {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
   line-height: 1.6;
+  font-style: italic;
+}
+
+/* Quick links */
+.not-found-links {
+  margin-bottom: 1.8rem;
+}
+
+.not-found-suggest {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+}
+
+.quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.quick-link {
+  padding: 0.45rem 1rem;
+  border: 1px solid rgba(192, 132, 252, 0.35);
+  border-radius: 1.5rem;
+  color: #c084fc;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  background: rgba(124, 58, 237, 0.08);
+}
+
+.quick-link:hover {
+  background: rgba(124, 58, 237, 0.2);
+  border-color: #a78bfa;
+  color: #e0d4ff;
+  transform: translateY(-1px);
 }
 
 .not-found-btn {
@@ -54,6 +151,16 @@
   color: #fff;
 }
 
+.not-found-countdown {
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.8rem;
+}
+
+.not-found-countdown strong {
+  color: #c084fc;
+}
+
 @media (max-width: 480px) {
   .not-found-code {
     font-size: 5rem;
@@ -64,6 +171,19 @@
   }
 
   .not-found-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .not-found-astronaut {
+    font-size: 2.5rem;
+  }
+
+  .quick-links {
+    gap: 0.4rem;
+  }
+
+  .quick-link {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.8rem;
   }
 }
