@@ -93,6 +93,30 @@ export default function Home() {
         </Container>
         <About />
       </Container>
+      <div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item"><span class="marquee-dot"></span> Next.js</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> React</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Claude API</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Node.js</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Python</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Supabase</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Stripe</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> TypeScript</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Tailwind CSS</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> PostgreSQL</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Next.js</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> React</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Claude API</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Node.js</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Python</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Supabase</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Stripe</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> TypeScript</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Tailwind CSS</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> PostgreSQL</span>
+  </div>
+</div>
       <Projects />
         <Skills />
 
