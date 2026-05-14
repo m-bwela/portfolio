@@ -1,0 +1,73 @@
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  background: #0a0a0a;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.7s cubic-bezier(.4,2,.6,1);
+}
+
+.boot-terminal {
+  background: #0d0d0d;
+  color: #00e600;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  box-shadow: 0 0 40px rgba(0, 230, 0, 0.12), 0 8px 32px rgba(0,0,0,0.7);
+  padding: 2.2rem 2.5rem 2.2rem 1.5rem;
+  min-width: 340px;
+  min-height: 180px;
+  max-width: 90vw;
+  max-height: 60vh;
+  overflow: auto;
+  border: 1px solid #00e60033;
+}
+
+.boot-line {
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  white-space: pre;
+}
+
+.boot-cursor {
+  display: inline-block;
+  width: 1ch;
+  color: #00e600;
+  animation: blink 1s steps(1) infinite;
+}
+
+.boot-ok {
+  color: #00ff88;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(0, 255, 136, 0.6);
+}
+
+.boot-result {
+  color: #b0ffb0;
+}
+
+.boot-identity {
+  margin-top: 0.5rem;
+  color: #00ffcc;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.boot-identity-name {
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0, 255, 204, 0.6);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}

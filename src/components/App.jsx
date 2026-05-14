@@ -1,10 +1,13 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ErrorBoundary from "./ErrorBoundary";
 import RouteScrollToTop from "./RouteScrollToTop";
 import ScrollToTop from "./ScrollToTop/ScrollToTop";
 import Footer from "./Footer/Footer";
 import Chatbot from "./Chatbot/Chatbot";
+
+import BootScreen from "./BootScreen";
+import Crosshair from "./Crosshair/Crosshair";
 
 // Lazy-loaded route components for code splitting
 const Home = lazy(() => import("./Home/Home"));
@@ -41,34 +44,42 @@ function PageLoader() {
 }
 
 export default function App() {
+  const [booted, setBooted] = useState(false);
+
   return (
-    <Router>
-      <RouteScrollToTop />
-      <ErrorBoundary>
-        <a href="#main-content" className="skip-link">Skip to main content</a>
-        <div className="app">
-          <Suspense fallback={<PageLoader />}>
-            <main id="main-content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/skills" element={<Skills />} />
-              <Route path="/resume" element={<Resume />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/online-presence" element={<OnlinePresence />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            </main>
-          </Suspense>
-          <Footer />
-          <ScrollToTop />
-          <Chatbot />
-        </div>
-      </ErrorBoundary>
-    </Router>
+    <>
+      <Crosshair />
+      {!booted && <BootScreen onFinish={() => setBooted(true)} />}
+      <div style={{ opacity: booted ? 1 : 0, pointerEvents: booted ? 'auto' : 'none', transition: 'opacity 0.7s cubic-bezier(.4,2,.6,1)' }}>
+        <Router>
+          <RouteScrollToTop />
+          <ErrorBoundary>
+            <a href="#main-content" className="skip-link">Skip to main content</a>
+            <div className="app">
+              <Suspense fallback={<PageLoader />}>
+                <main id="main-content">
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/skills" element={<Skills />} />
+                    <Route path="/resume" element={<Resume />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/online-presence" element={<OnlinePresence />} />
+                    <Route path="/terms" element={<Terms />} />
+                    <Route path="/privacy" element={<Privacy />} />
+                    <Route path="/blog" element={<Blog />} />
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </main>
+              </Suspense>
+              <Footer />
+              <ScrollToTop />
+              <Chatbot />
+            </div>
+          </ErrorBoundary>
+        </Router>
+      </div>
+    </>
   );
 }
