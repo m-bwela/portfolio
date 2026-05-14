@@ -96,7 +96,7 @@ export default function BootScreen({ onFinish }) {
         {/* Identity line */}
         {showIdentity && (
           <div className="boot-line boot-identity">
-            ► <span className="boot-identity-name">TYE</span> — FULL STACK ENGINEER
+            ► <span className="boot-identity-name">TYE NZAMBU</span> — FULL STACK ENGINEER
             <span className="boot-cursor" style={{ opacity: showCursor ? 1 : 0 }}>|</span>
           </div>
         )}
