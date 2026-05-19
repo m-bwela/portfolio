@@ -44,12 +44,17 @@ function PageLoader() {
 }
 
 export default function App() {
-  const [booted, setBooted] = useState(false);
+  const [booted, setBooted] = useState(() => sessionStorage.getItem('booted') === 'true');
+
+  const handleBootFinish = () => {
+    sessionStorage.setItem('booted', 'true');
+    setBooted(true);
+  };
 
   return (
     <>
       <Crosshair />
-      {!booted && <BootScreen onFinish={() => setBooted(true)} />}
+      {!booted && <BootScreen onFinish={handleBootFinish} />}
       <div style={{ opacity: booted ? 1 : 0, pointerEvents: booted ? 'auto' : 'none', transition: 'opacity 0.7s cubic-bezier(.4,2,.6,1)' }}>
         <Router>
           <RouteScrollToTop />
