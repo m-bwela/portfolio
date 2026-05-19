@@ -9,20 +9,137 @@
   transition: opacity 0.7s cubic-bezier(.4,2,.6,1);
 }
 
+/* ── Side-by-side layout ─────────────────────────── */
+.boot-layout {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 860px;
+  width: 100%;
+  padding: 1rem 1.5rem;
+}
+
+/* ── Robot panel ─────────────────────────────────── */
+.robot-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.robot-svg {
+  width: 130px;
+  height: auto;
+}
+
+/* Speech bubble with downward tail */
+.speech-bubble {
+  background: #0d1a0f;
+  border: 1.5px solid #00a829;
+  border-radius: 10px;
+  padding: 0.45rem 0.85rem;
+  color: #00ff41;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 0.75rem;
+  text-align: center;
+  min-width: 88px;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.08);
+  white-space: nowrap;
+}
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 9px solid #00a829;
+}
+
+/* ── Terminal box ────────────────────────────────── */
 .boot-terminal {
   background: #0d0d0d;
   color: #00e600;
   font-family: 'Fira Mono', 'Consolas', monospace;
-  font-size: 1.1rem;
+  font-size: 1rem;
   border-radius: 4px;
   box-shadow: 0 0 40px rgba(0, 230, 0, 0.12), 0 8px 32px rgba(0,0,0,0.7);
-  padding: 2.2rem 2.5rem 2.2rem 1.5rem;
-  min-width: 340px;
+  padding: 2rem 2.2rem 2rem 1.4rem;
+  min-width: 300px;
   min-height: 180px;
-  max-width: 90vw;
+  max-width: 520px;
   max-height: 60vh;
   overflow: auto;
   border: 1px solid #00e60033;
+  flex: 1;
+}
+
+/* ── Robot animations ────────────────────────────── */
+
+/* body float */
+.robot-body {
+  animation: robotFloat 2.8s ease-in-out infinite;
+}
+@keyframes robotFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+/* eye blink */
+.eye-left, .eye-right {
+  animation: eyeBlink 3.5s ease-in-out infinite;
+}
+.eye-right { animation-delay: 0.12s; }
+@keyframes eyeBlink {
+  0%, 88%, 100% { transform: scaleY(1); }
+  92%           { transform: scaleY(0.05); }
+}
+
+/* antenna pulse */
+.antenna-ball {
+  animation: antennaPulse 1s ease-in-out infinite;
+}
+@keyframes antennaPulse {
+  0%, 100% { opacity: 0.8; }
+  50%      { opacity: 1; filter: drop-shadow(0 0 5px #00ff41); }
+}
+
+/* chest LEDs cascade (delays set inline) */
+.chest-led {
+  animation: ledPulse 0.9s ease-in-out infinite;
+}
+@keyframes ledPulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.2; }
+}
+
+/* left arm wave — only while active */
+.arm-wave {
+  animation: armWave 1.4s ease-in-out infinite;
+}
+@keyframes armWave {
+  0%, 100% { transform: rotate(0deg); }
+  30%      { transform: rotate(-18deg); }
+  70%      { transform: rotate(10deg); }
+}
+
+/* ── Responsive: stack on small screens ─────────── */
+@media (max-width: 600px) {
+  .boot-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .robot-svg { width: 90px; }
+  .boot-terminal {
+    min-width: unset;
+    width: 100%;
+    font-size: 0.82rem;
+  }
+  .speech-bubble { font-size: 0.7rem; }
 }
 
 .boot-line {
